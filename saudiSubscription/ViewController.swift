@@ -10,8 +10,13 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var slideView: UIView!
+    @IBOutlet weak var companyName: UILabel!
+    @IBOutlet weak var subscriptionStartDate: UILabel!
+    @IBOutlet weak var subscriptionEndDate: UILabel!
+    @IBOutlet weak var bankName: UILabel!
+    @IBOutlet weak var subscriptionState: UILabel!
     @IBOutlet weak var slideLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
