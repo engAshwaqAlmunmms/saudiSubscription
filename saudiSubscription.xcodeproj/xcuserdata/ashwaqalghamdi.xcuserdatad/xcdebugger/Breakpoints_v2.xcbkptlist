@@ -14,10 +14,10 @@
             filePath = "saudiSubscription/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "slideInFromLeft()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "1274C77C-9C6F-4FA7-A895-B51F3D5A4FA6 - 1be521494af44b7f"
