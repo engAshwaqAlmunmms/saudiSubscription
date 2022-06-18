@@ -15,6 +15,7 @@
 		EDB2E7BA285A53B80021E884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */; };
 		EDB2E7C5285A53B80021E884 /* saudiSubscriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7C4285A53B80021E884 /* saudiSubscriptionTests.swift */; };
 		EDB2E7D0285A53B80021E884 /* saudiSubscriptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7CF285A53B80021E884 /* saudiSubscriptionUITests.swift */; };
+		EDB2E7DF285A59E60021E884 /* extensionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7DE285A59E60021E884 /* extensionUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		EDB2E7CB285A53B80021E884 /* saudiSubscriptionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = saudiSubscriptionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB2E7CF285A53B80021E884 /* saudiSubscriptionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saudiSubscriptionUITests.swift; sourceTree = "<group>"; };
 		EDB2E7D1285A53B80021E884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDB2E7DE285A59E60021E884 /* extensionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		EDB2E7AC285A53B70021E884 /* saudiSubscription */ = {
 			isa = PBXGroup;
 			children = (
+				EDB2E7DD285A59C80021E884 /* extension */,
 				EDB2E7AD285A53B70021E884 /* AppDelegate.swift */,
 				EDB2E7AF285A53B70021E884 /* SceneDelegate.swift */,
 				EDB2E7B1285A53B70021E884 /* ViewController.swift */,
@@ -126,6 +129,14 @@
 				EDB2E7D1285A53B80021E884 /* Info.plist */,
 			);
 			path = saudiSubscriptionUITests;
+			sourceTree = "<group>";
+		};
+		EDB2E7DD285A59C80021E884 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				EDB2E7DE285A59E60021E884 /* extensionUI.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				EDB2E7B2285A53B70021E884 /* ViewController.swift in Sources */,
 				EDB2E7AE285A53B70021E884 /* AppDelegate.swift in Sources */,
 				EDB2E7B0285A53B70021E884 /* SceneDelegate.swift in Sources */,
+				EDB2E7DF285A59E60021E884 /* extensionUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C2377A7B-FC3B-40C5-B75E-AF4509A39D82"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1274C77C-9C6F-4FA7-A895-B51F3D5A4FA6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "saudiSubscription/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "1274C77C-9C6F-4FA7-A895-B51F3D5A4FA6 - 1be521494af44b7f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of __C.UIView.slideInFromLeft(duration: Swift.Double, completionDelegate: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "saudiSubscription"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "1274C77C-9C6F-4FA7-A895-B51F3D5A4FA6 - 967462f67f439576"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of __C.UIView.slideInFromLeft(duration: Swift.Double, completionDelegate: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "saudiSubscription"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "6">
+               </Location>
+               <Location
+                  uuid = "1274C77C-9C6F-4FA7-A895-B51F3D5A4FA6 - 342be1251b8a1eb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__C.UIView.slideInFromLeft(duration: Swift.Double, completionDelegate: Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
+                  moduleName = "saudiSubscription"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "62">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
