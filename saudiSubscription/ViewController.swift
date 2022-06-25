@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -17,21 +18,45 @@ class ViewController: UIViewController {
     @IBOutlet weak var subscriptionState: UILabel!
     @IBOutlet weak var slideLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
+    var subscription: Subscription?
+    var ref = Database.database().reference(withPath: "bankName")
+    var refObservers: [DatabaseHandle] = []
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackgroundForCard()
         cardView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         slideLabel.text = "hi ashwaq said"
         slideInFromLeft()
+        fetchDataOfFirebase()
+    }
+    
+    func itemInFirebase() {
+        
+        let items = Subscription(
+            companyName: subscription?.companyName ?? "" ,
+            startDate: subscription?.startDate ?? "",
+            endDate: subscription?.endDate ?? "",
+            bankName: subscription?.bankName ?? "",
+            state: subscription?.state ?? false)
+    }
+    
+    func fetchDataOfFirebase() {
+        ref.observeSingleEvent(of: .childAdded, with: { (snapshot) in
+            print(snapshot.value ?? "")
+            let value = snapshot.value as? NSDictionary
+            let name = value?["bankName"] as? String ?? ""
+            print("\(name)")
+            self.companyName.text = value?["bankName"] as? String ?? ""
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     public func setGradientBackgroundForCard() {
         let gradientLayer = CAGradientLayer()
         let middleColor = #colorLiteral(red: 0.5960784314, green: 0.6862745098, blue: 0.737254902, alpha: 1).cgColor
         let buttomColor = #colorLiteral(red: 0.9215686275, green: 0.6980392157, blue: 0.4, alpha: 1).cgColor
-      //  let middleColor = #colorLiteral(red: 0.2509803922, green: 0.1294117647, blue: 0.2078431373, alpha: 1).cgColor
-       // let buttomColor = #colorLiteral(red: 0.8509803922, green: 0.3882352941, blue: 0.2823529412, alpha: 1).cgColor
         gradientLayer.colors = [ buttomColor, middleColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
