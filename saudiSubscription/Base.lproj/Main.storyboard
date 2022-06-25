@@ -182,7 +182,6 @@
                         <outlet property="cardView" destination="cNy-Ct-FFF" id="wj7-UR-h5G"/>
                         <outlet property="companyName" destination="nqs-AE-eYt" id="0DA-rH-8Yg"/>
                         <outlet property="slideLabel" destination="owh-wn-odd" id="sZa-71-3TH"/>
-                        <outlet property="slideView" destination="RSr-ot-aNr" id="oVE-qT-6gO"/>
                         <outlet property="subscriptionEndDate" destination="k4a-he-JrT" id="7IW-6j-37K"/>
                         <outlet property="subscriptionStartDate" destination="BY1-Zf-XDe" id="2bY-OI-O8l"/>
                         <outlet property="subscriptionState" destination="MXc-3T-M5x" id="xis-gm-KSj"/>
