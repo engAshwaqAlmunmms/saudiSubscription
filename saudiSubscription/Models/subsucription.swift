@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import Firebase
 
 struct Subscription {
     
-    let ref: String?
+    let ref: DatabaseReference?
     let companyName: String?
     let startDate: String?
     let endDate: String?
