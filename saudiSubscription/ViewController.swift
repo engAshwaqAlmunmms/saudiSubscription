@@ -19,38 +19,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var slideLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var subscription: Subscription?
-    var ref = Database.database().reference(withPath: "bankName")
-    var refObservers: [DatabaseHandle] = []
-        
+    var ref = Database.database().reference()
+    var endDate:Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackgroundForCard()
         cardView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        slideLabel.text = "hi ashwaq said"
+        slideLabel.text = "hi Ashwaq said"
         slideInFromLeft()
-        fetchDataOfFirebase()
-    }
-    
-    func itemInFirebase() {
-        
-        let items = Subscription(
-            companyName: subscription?.companyName ?? "" ,
-            startDate: subscription?.startDate ?? "",
-            endDate: subscription?.endDate ?? "",
-            bankName: subscription?.bankName ?? "",
-            state: subscription?.state ?? false)
-    }
-    
-    func fetchDataOfFirebase() {
-        ref.observeSingleEvent(of: .childAdded, with: { (snapshot) in
-            print(snapshot.value ?? "")
-            let value = snapshot.value as? NSDictionary
-            let name = value?["bankName"] as? String ?? ""
-            print("\(name)")
-            self.companyName.text = value?["bankName"] as? String ?? ""
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        fetchCompanyName()
+        fetchStartDate()
+        fetchEndDate()
+        fetchBankName()
+        fetchSubscriptionState()
     }
     
     public func setGradientBackgroundForCard() {
@@ -65,11 +47,51 @@ class ViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, at:0)
     }
     
+    func calaulateDate() {
+        
+    }
+    
     func slideInFromLeft() {
         UIView.animate(withDuration: 10.0, delay: 0, options: ([.curveEaseInOut, .repeat]), animations: {() -> Void in
             self.slideLabel.center = CGPoint(x: 0 - self.slideLabel.bounds.size.width / 2, y: self.slideLabel.center.y)
         })
     }
+    
+    func fetchCompanyName() {
+        let data = ref.child("saudiSubscription").child("companyName")
+        data.observe(.value) { (snap: DataSnapshot) in
+            self.companyName.text = snap.value as? String ?? "no"
+        }
+    }
+  
+    func fetchStartDate() {
+        let data = ref.child("saudiSubscription").child("subscriptionStartDate")
+        data.observe(.value) { (snap: DataSnapshot) in
+            self.subscriptionStartDate.text = snap.value as? String ?? "no"
+        }
+    }
+    
+    func fetchEndDate() {
+        let data = ref.child("saudiSubscription").child("subscriptionEndDate")
+        data.observe(.value) { (snap: DataSnapshot) in
+            self.subscriptionEndDate.text = snap.value as? String ?? "no"
+        }
+    }
+    
+    func fetchBankName() {
+        let data = ref.child("saudiSubscription").child("bankName")
+        data.observe(.value) { (snap: DataSnapshot) in
+            self.bankName.text = snap.value as? String ?? "no"
+        }
+    }
+    
+    func fetchSubscriptionState() {
+        let data = ref.child("saudiSubscription").child("subscriptionState")
+        data.observe(.value) { (snap: DataSnapshot) in
+            self.subscriptionState.text = snap.value as? String ?? "no"
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -81,7 +103,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
     
 }
 
