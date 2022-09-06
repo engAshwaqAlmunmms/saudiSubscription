@@ -23,7 +23,6 @@
 		EDB2E7BA285A53B80021E884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */; };
 		EDB2E7C5285A53B80021E884 /* saudiSubscriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7C4285A53B80021E884 /* saudiSubscriptionTests.swift */; };
 		EDB2E7D0285A53B80021E884 /* saudiSubscriptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7CF285A53B80021E884 /* saudiSubscriptionUITests.swift */; };
-		EDB2E7DF285A59E60021E884 /* extensionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7DE285A59E60021E884 /* extensionUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +59,6 @@
 		EDB2E7CB285A53B80021E884 /* saudiSubscriptionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = saudiSubscriptionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB2E7CF285A53B80021E884 /* saudiSubscriptionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saudiSubscriptionUITests.swift; sourceTree = "<group>"; };
 		EDB2E7D1285A53B80021E884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDB2E7DE285A59E60021E884 /* extensionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +92,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ED3990BD286675B000D6592B /* Models */ = {
+		ED3990BD286675B000D6592B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				ED3990BE286675D900D6592B /* subsucription.swift */,
 			);
-			path = Models;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED54011728C7CDA200ED000D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED54011828C7CDB300ED000D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED54011B28C7CE5900ED000D /* Controller */,
+				ED54011A28C7CE4C00ED000D /* UI */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ED54011928C7CE2800ED000D /* supportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				EDB2E7AD285A53B70021E884 /* AppDelegate.swift */,
+				EDB2E7AF285A53B70021E884 /* SceneDelegate.swift */,
+				EDB2E7B6285A53B80021E884 /* Assets.xcassets */,
+				ED3990C028667A4D00D6592B /* GoogleService-Info.plist */,
+				EDB2E7BB285A53B80021E884 /* Info.plist */,
+			);
+			path = supportingFiles;
+			sourceTree = "<group>";
+		};
+		ED54011A28C7CE4C00ED000D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EDB2E7B3285A53B70021E884 /* Main.storyboard */,
+				EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		ED54011B28C7CE5900ED000D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EDB2E7B1285A53B70021E884 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		EDB2E7A1285A53B70021E884 = {
@@ -125,16 +168,10 @@
 		EDB2E7AC285A53B70021E884 /* saudiSubscription */ = {
 			isa = PBXGroup;
 			children = (
-				ED3990BD286675B000D6592B /* Models */,
-				EDB2E7DD285A59C80021E884 /* Extension */,
-				EDB2E7AD285A53B70021E884 /* AppDelegate.swift */,
-				EDB2E7AF285A53B70021E884 /* SceneDelegate.swift */,
-				EDB2E7B1285A53B70021E884 /* ViewController.swift */,
-				EDB2E7B3285A53B70021E884 /* Main.storyboard */,
-				EDB2E7B6285A53B80021E884 /* Assets.xcassets */,
-				EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */,
-				ED3990C028667A4D00D6592B /* GoogleService-Info.plist */,
-				EDB2E7BB285A53B80021E884 /* Info.plist */,
+				ED54011928C7CE2800ED000D /* supportingFiles */,
+				ED54011828C7CDB300ED000D /* ViewController */,
+				ED54011728C7CDA200ED000D /* ViewModel */,
+				ED3990BD286675B000D6592B /* Model */,
 			);
 			path = saudiSubscription;
 			sourceTree = "<group>";
@@ -155,14 +192,6 @@
 				EDB2E7D1285A53B80021E884 /* Info.plist */,
 			);
 			path = saudiSubscriptionUITests;
-			sourceTree = "<group>";
-		};
-		EDB2E7DD285A59C80021E884 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				EDB2E7DE285A59E60021E884 /* extensionUI.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +340,6 @@
 				ED3990BF286675D900D6592B /* subsucription.swift in Sources */,
 				EDB2E7AE285A53B70021E884 /* AppDelegate.swift in Sources */,
 				EDB2E7B0285A53B70021E884 /* SceneDelegate.swift in Sources */,
-				EDB2E7DF285A59E60021E884 /* extensionUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
