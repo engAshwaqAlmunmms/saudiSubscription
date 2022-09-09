@@ -20,19 +20,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var subscription: Subscription?
     var ref = Database.database().reference()
-    var endDate:Date?
+    var endDate:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackgroundForCard()
         cardView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        slideLabel.text = "hi Ashwaq said"
         slideInFromLeft()
         fetchCompanyName()
         fetchStartDate()
         fetchEndDate()
         fetchBankName()
         fetchSubscriptionState()
+        calaulateDate()
     }
     
     public func setGradientBackgroundForCard() {
@@ -48,7 +48,12 @@ class ViewController: UIViewController {
     }
     
     func calaulateDate() {
-        
+        let isoDate = endDate ?? ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.locale = Locale(identifier: "ar")
+        dateFormatter.date(from:isoDate)
+        slideLabel.text = String(isoDate)
     }
     
     func slideInFromLeft() {
@@ -68,6 +73,7 @@ class ViewController: UIViewController {
         let data = ref.child("saudiSubscription").child("subscriptionStartDate")
         data.observe(.value) { (snap: DataSnapshot) in
             self.subscriptionStartDate.text = snap.value as? String ?? "no"
+            self.endDate = snap.value as? String ?? "no"
         }
     }
     
@@ -75,6 +81,7 @@ class ViewController: UIViewController {
         let data = ref.child("saudiSubscription").child("subscriptionEndDate")
         data.observe(.value) { (snap: DataSnapshot) in
             self.subscriptionEndDate.text = snap.value as? String ?? "no"
+            slideLabel.text = snap.value as? String ?? "no"
         }
     }
     
