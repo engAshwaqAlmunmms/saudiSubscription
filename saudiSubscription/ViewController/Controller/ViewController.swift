@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 class ViewController: UIViewController {
     
@@ -18,24 +17,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var subscriptionState: UILabel!
     @IBOutlet weak var slideLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var subscription: Subscription?
-    var ref = Database.database().reference()
-    var endDate:String?
+    var subscription: SubscriptionViewModel?
+    var endDateSubscription:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpView()
+    }
+    
+    private func setUpView() {
+        
         setGradientBackgroundForCard()
         cardView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         slideInFromLeft()
-        fetchCompanyName()
-        fetchStartDate()
-        fetchEndDate()
-        fetchBankName()
-        fetchSubscriptionState()
-        calaulateDate()
+        tableView.register(subscriptionTableViewCell.self, forCellReuseIdentifier: "subscriptionTableViewCell")
     }
     
-    public func setGradientBackgroundForCard() {
+    private func setGradientBackgroundForCard() {
         let gradientLayer = CAGradientLayer()
         let middleColor = #colorLiteral(red: 0.5960784314, green: 0.6862745098, blue: 0.737254902, alpha: 1).cgColor
         let buttomColor = #colorLiteral(red: 0.9215686275, green: 0.6980392157, blue: 0.4, alpha: 1).cgColor
@@ -47,57 +45,31 @@ class ViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer, at:0)
     }
     
-    func calaulateDate() {
-        let isoDate = endDate ?? ""
+    private func calaulateDate() {
+        let isoDate = endDateSubscription ?? ""
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         dateFormatter.locale = Locale(identifier: "ar")
-        dateFormatter.date(from:isoDate)
-        slideLabel.text = String(isoDate)
+        let endDate = dateFormatter.date(from:isoDate) ?? Date()
+        let todayDate = Date()
+        if todayDate > endDate {
+            self.slideLabel.text = "\(endDate)"
+        }
     }
     
-    func slideInFromLeft() {
+    private func slideInFromLeft() {
         UIView.animate(withDuration: 10.0, delay: 0, options: ([.curveEaseInOut, .repeat]), animations: {() -> Void in
             self.slideLabel.center = CGPoint(x: 0 - self.slideLabel.bounds.size.width / 2, y: self.slideLabel.center.y)
         })
     }
     
-    func fetchCompanyName() {
-        let data = ref.child("saudiSubscription").child("companyName")
-        data.observe(.value) { (snap: DataSnapshot) in
-            self.companyName.text = snap.value as? String ?? "no"
-        }
-    }
-  
-    func fetchStartDate() {
-        let data = ref.child("saudiSubscription").child("subscriptionStartDate")
-        data.observe(.value) { (snap: DataSnapshot) in
-            self.subscriptionStartDate.text = snap.value as? String ?? "no"
-            self.endDate = snap.value as? String ?? "no"
-        }
-    }
-    
-    func fetchEndDate() {
-        let data = ref.child("saudiSubscription").child("subscriptionEndDate")
-        data.observe(.value) { (snap: DataSnapshot) in
-            self.subscriptionEndDate.text = snap.value as? String ?? "no"
-            slideLabel.text = snap.value as? String ?? "no"
-        }
-    }
-    
-    func fetchBankName() {
-        let data = ref.child("saudiSubscription").child("bankName")
-        data.observe(.value) { (snap: DataSnapshot) in
-            self.bankName.text = snap.value as? String ?? "no"
-        }
-    }
-    
-    func fetchSubscriptionState() {
-        let data = ref.child("saudiSubscription").child("subscriptionState")
-        data.observe(.value) { (snap: DataSnapshot) in
-            self.subscriptionState.text = snap.value as? String ?? "no"
-        }
-    }
+//    private func handleSubscriptionItem() {
+//        self.companyName.text = subscription?.getValueToSubscriptionInfo(info: .companyName)
+//        self.subscriptionStartDate.text = subscription?.getValueToSubscriptionInfo(info: .subscriptionStartDate)
+//        self.endDateSubscription.text = subscription?.getValueToSubscriptionInfo(info: .subscriptionEndDate)
+//        self.bankName.text = subscription?.getValueToSubscriptionInfo(info: .bankName)
+//        self.subscriptionState.text = subscription?.getValueToSubscriptionInfo(info: .subscriptionState)
+//    }
     
 }
 
@@ -108,8 +80,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionTableViewCell", for: indexPath) as? subscriptionTableViewCell
+        cell?.subscriptionNameLabel.text = "أسم الشركة"
+        cell?.subscriptionEndDateLabel.text = "تاريخ نهاية الأكتتاب"
+        cell?.subscriptionName.text = ""
+        cell?.subscriptionEndDate.text = ""
+        return cell ?? UITableViewCell()
     }
     
 }
-
