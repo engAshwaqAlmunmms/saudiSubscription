@@ -48,6 +48,7 @@
 /* Begin PBXFileReference section */
 		ED3990BE286675D900D6592B /* subsucription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subsucription.swift; sourceTree = "<group>"; };
 		ED3990C028667A4D00D6592B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED68E6A628CF87D5008A776F /* Task.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Task.md; sourceTree = "<group>"; };
 		ED90A5E328CE5AFB00346759 /* subscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subscriptionTableViewCell.swift; sourceTree = "<group>"; };
 		ED90A5E428CE5AFB00346759 /* subscriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = subscriptionTableViewCell.xib; sourceTree = "<group>"; };
 		ED90A5E728CE855F00346759 /* SubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewModel.swift; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 		EDB2E7AC285A53B70021E884 /* saudiSubscription */ = {
 			isa = PBXGroup;
 			children = (
+				ED68E6A628CF87D5008A776F /* Task.md */,
 				ED54011928C7CE2800ED000D /* supportingFiles */,
 				ED54011828C7CDB300ED000D /* ViewController */,
 				ED54011728C7CDA200ED000D /* ViewModel */,

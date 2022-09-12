@@ -62,15 +62,6 @@ class ViewController: UIViewController {
             self.slideLabel.center = CGPoint(x: 0 - self.slideLabel.bounds.size.width / 2, y: self.slideLabel.center.y)
         })
     }
-    
-//    private func handleSubscriptionItem() {
-//        self.companyName.text = subscription?.getValueToSubscriptionInfo(info: .companyName)
-//        self.subscriptionStartDate.text = subscription?.getValueToSubscriptionInfo(info: .subscriptionStartDate)
-//        self.endDateSubscription.text = subscription?.getValueToSubscriptionInfo(info: .subscriptionEndDate)
-//        self.bankName.text = subscription?.getValueToSubscriptionInfo(info: .bankName)
-//        self.subscriptionState.text = subscription?.getValueToSubscriptionInfo(info: .subscriptionState)
-//    }
-    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {

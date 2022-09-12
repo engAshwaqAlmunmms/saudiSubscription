@@ -17,14 +17,14 @@ class subscriptionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        subscriptionNameLabel.textAlignment = .center
-        subscriptionNameLabel.textColor = .brown
-        subscriptionEndDateLabel.textAlignment = .center
-        subscriptionEndDateLabel.textColor = .brown
-        subscriptionName.textAlignment = .center
-        subscriptionName.textColor = .brown
-        subscriptionEndDate.textAlignment = .center
-        subscriptionEndDate.textColor = .brown
+//        subscriptionNameLabel.textAlignment = .center
+//        subscriptionNameLabel.textColor = .brown
+//        subscriptionEndDateLabel.textAlignment = .center
+//        subscriptionEndDateLabel.textColor = .brown
+//        subscriptionName.textAlignment = .center
+//        subscriptionName.textColor = .brown
+//        subscriptionEndDate.textAlignment = .center
+//        subscriptionEndDate.textColor = .brown
     }
 
 }
