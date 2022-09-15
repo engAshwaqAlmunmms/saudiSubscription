@@ -15,8 +15,8 @@
 		ED3990CA286681F100D6592B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990C9286681F100D6592B /* FirebaseMessaging */; };
 		ED3990CC286681F100D6592B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990CB286681F100D6592B /* FirebaseStorage */; };
 		ED3990CE286681F100D6592B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990CD286681F100D6592B /* FirebaseDatabase */; };
-		ED90A5E528CE5AFB00346759 /* subscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90A5E328CE5AFB00346759 /* subscriptionTableViewCell.swift */; };
-		ED90A5E628CE5AFB00346759 /* subscriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED90A5E428CE5AFB00346759 /* subscriptionTableViewCell.xib */; };
+		ED90A5E528CE5AFB00346759 /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90A5E328CE5AFB00346759 /* SubscriptionTableViewCell.swift */; };
+		ED90A5E628CE5AFB00346759 /* SubscriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED90A5E428CE5AFB00346759 /* SubscriptionTableViewCell.xib */; };
 		ED90A5E828CE855F00346759 /* SubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90A5E728CE855F00346759 /* SubscriptionViewModel.swift */; };
 		EDB2E7AE285A53B70021E884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7AD285A53B70021E884 /* AppDelegate.swift */; };
 		EDB2E7B0285A53B70021E884 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7AF285A53B70021E884 /* SceneDelegate.swift */; };
@@ -26,6 +26,8 @@
 		EDB2E7BA285A53B80021E884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */; };
 		EDB2E7C5285A53B80021E884 /* saudiSubscriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7C4285A53B80021E884 /* saudiSubscriptionTests.swift */; };
 		EDB2E7D0285A53B80021E884 /* saudiSubscriptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7CF285A53B80021E884 /* saudiSubscriptionUITests.swift */; };
+		EDC9FD5128D3A3E800519620 /* SubscriptionTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9FD4F28D3A3E800519620 /* SubscriptionTitleTableViewCell.swift */; };
+		EDC9FD5228D3A3E800519620 /* SubscriptionTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC9FD5028D3A3E800519620 /* SubscriptionTitleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +51,8 @@
 		ED3990BE286675D900D6592B /* subsucription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subsucription.swift; sourceTree = "<group>"; };
 		ED3990C028667A4D00D6592B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED68E6A628CF87D5008A776F /* Task.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Task.md; sourceTree = "<group>"; };
-		ED90A5E328CE5AFB00346759 /* subscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subscriptionTableViewCell.swift; sourceTree = "<group>"; };
-		ED90A5E428CE5AFB00346759 /* subscriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = subscriptionTableViewCell.xib; sourceTree = "<group>"; };
+		ED90A5E328CE5AFB00346759 /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
+		ED90A5E428CE5AFB00346759 /* SubscriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionTableViewCell.xib; sourceTree = "<group>"; };
 		ED90A5E728CE855F00346759 /* SubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewModel.swift; sourceTree = "<group>"; };
 		EDB2E7AA285A53B70021E884 /* saudiSubscription.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = saudiSubscription.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB2E7AD285A53B70021E884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		EDB2E7CB285A53B80021E884 /* saudiSubscriptionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = saudiSubscriptionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB2E7CF285A53B80021E884 /* saudiSubscriptionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saudiSubscriptionUITests.swift; sourceTree = "<group>"; };
 		EDB2E7D1285A53B80021E884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC9FD4F28D3A3E800519620 /* SubscriptionTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTitleTableViewCell.swift; sourceTree = "<group>"; };
+		EDC9FD5028D3A3E800519620 /* SubscriptionTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionTitleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				ED3990BE286675D900D6592B /* subsucription.swift */,
-				ED90A5E728CE855F00346759 /* SubscriptionViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +114,7 @@
 		ED54011728C7CDA200ED000D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				ED90A5E728CE855F00346759 /* SubscriptionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -119,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				ED54011B28C7CE5900ED000D /* Controller */,
-				ED54011A28C7CE4C00ED000D /* UI */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -134,21 +137,16 @@
 			path = supportingFiles;
 			sourceTree = "<group>";
 		};
-		ED54011A28C7CE4C00ED000D /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				EDB2E7B3285A53B70021E884 /* Main.storyboard */,
-				EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */,
-				ED90A5E428CE5AFB00346759 /* subscriptionTableViewCell.xib */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		ED54011B28C7CE5900ED000D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				EDB2E7B1285A53B70021E884 /* ViewController.swift */,
-				ED90A5E328CE5AFB00346759 /* subscriptionTableViewCell.swift */,
+				ED90A5E328CE5AFB00346759 /* SubscriptionTableViewCell.swift */,
+				EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */,
+				EDB2E7B3285A53B70021E884 /* Main.storyboard */,
+				ED90A5E428CE5AFB00346759 /* SubscriptionTableViewCell.xib */,
+				EDC9FD4F28D3A3E800519620 /* SubscriptionTitleTableViewCell.swift */,
+				EDC9FD5028D3A3E800519620 /* SubscriptionTitleTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,8 +318,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDB2E7BA285A53B80021E884 /* LaunchScreen.storyboard in Resources */,
-				ED90A5E628CE5AFB00346759 /* subscriptionTableViewCell.xib in Resources */,
+				ED90A5E628CE5AFB00346759 /* SubscriptionTableViewCell.xib in Resources */,
 				ED3990C128667A4D00D6592B /* GoogleService-Info.plist in Resources */,
+				EDC9FD5228D3A3E800519620 /* SubscriptionTitleTableViewCell.xib in Resources */,
 				EDB2E7B7285A53B80021E884 /* Assets.xcassets in Resources */,
 				EDB2E7B5285A53B70021E884 /* Main.storyboard in Resources */,
 			);
@@ -350,8 +349,9 @@
 			files = (
 				EDB2E7B2285A53B70021E884 /* ViewController.swift in Sources */,
 				ED3990BF286675D900D6592B /* subsucription.swift in Sources */,
-				ED90A5E528CE5AFB00346759 /* subscriptionTableViewCell.swift in Sources */,
+				ED90A5E528CE5AFB00346759 /* SubscriptionTableViewCell.swift in Sources */,
 				ED90A5E828CE855F00346759 /* SubscriptionViewModel.swift in Sources */,
+				EDC9FD5128D3A3E800519620 /* SubscriptionTitleTableViewCell.swift in Sources */,
 				EDB2E7AE285A53B70021E884 /* AppDelegate.swift in Sources */,
 				EDB2E7B0285A53B70021E884 /* SceneDelegate.swift in Sources */,
 			);
