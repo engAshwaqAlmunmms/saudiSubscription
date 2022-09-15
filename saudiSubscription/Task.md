@@ -1,9 +1,10 @@
-#  Remaining work:-
-# Fix 
-* fix move logic to view model 
-* cell not appear
+#Remaining work:-
+
+#Fix 
+* fix move logic to view model $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+* cell not appear $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 * slide label fix format
-* save all object in fire base to show in table view 
+* save all object in fireBase to show in table view 
 * fix animation in slide label 
 
 #Feature 
@@ -14,3 +15,4 @@
 * notification 
 * widget 
 * view title
+* handle empty tables 
