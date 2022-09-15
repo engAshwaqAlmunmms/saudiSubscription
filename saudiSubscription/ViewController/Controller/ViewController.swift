@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var subscriptionState: UILabel!
     @IBOutlet weak var slideLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var subscription: SubscriptionViewModel?
+    var subscriptionViewModel = SubscriptionViewModel()
     var endDateSubscription:String?
     
     override func viewDidLoad() {
@@ -29,9 +29,21 @@ class ViewController: UIViewController {
         
         setGradientBackgroundForCard()
         cardView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tableView.dataSource = self
+        tableView.delegate = self
         slideInFromLeft()
-        tableView.register(subscriptionTableViewCell.self, forCellReuseIdentifier: "subscriptionTableViewCell")
-    }
+        
+        let nibFirstCell = UINib(nibName: "SubscriptionTableViewCell", bundle: nil)
+        tableView.register(nibFirstCell, forCellReuseIdentifier: "infoEndDateSubscription")
+        let nibSecondCell = UINib(nibName: "SubscriptionTitleTableViewCell", bundle: nil)
+        tableView.register(nibSecondCell, forCellReuseIdentifier: "subscriptionTitle")
+        
+        subscriptionViewModel.getValueToSubscriptionInfo(info: .companyName, value: self.companyName)
+        subscriptionViewModel.getValueToSubscriptionInfo(info: .subscriptionStartDate, value: self.subscriptionStartDate)
+        subscriptionViewModel.getValueToSubscriptionInfo(info: .subscriptionEndDate, value: self.subscriptionEndDate)
+        subscriptionViewModel.getValueToSubscriptionInfo(info: .bankName, value: self.bankName)
+        subscriptionViewModel.getValueToSubscriptionInfo(info: .subscriptionState, value: self.subscriptionState)
+        }
     
     private func setGradientBackgroundForCard() {
         let gradientLayer = CAGradientLayer()
@@ -67,16 +79,21 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2 // name subscription count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionTableViewCell", for: indexPath) as? subscriptionTableViewCell
-        cell?.subscriptionNameLabel.text = "أسم الشركة"
-        cell?.subscriptionEndDateLabel.text = "تاريخ نهاية الأكتتاب"
-        cell?.subscriptionName.text = ""
-        cell?.subscriptionEndDate.text = ""
-        return cell ?? UITableViewCell()
+        switch indexPath.row {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionTitle", for: indexPath) as? SubscriptionTitleTableViewCell
+            return cell ?? UITableViewCell()
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "infoEndDateSubscription", for: indexPath) as? SubscriptionTableViewCell
+            return cell ?? UITableViewCell()
+        default:
+            return UITableViewCell()
+        }
+        
     }
     
 }

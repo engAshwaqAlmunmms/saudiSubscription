@@ -23,156 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "29EE1739-3D48-4612-90C4-12E673337515"
+            uuid = "BBCAF2C5-4336-4F94-B327-B3729C12C256"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "saudiSubscription/ViewController/Controller/subscriptionTableViewCell.swift"
+            filePath = "saudiSubscription/ViewModel/SubscriptionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "subscriptionTableViewCell"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "29EE1739-3D48-4612-90C4-12E673337515 - 2660a3c621c6f096"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "saudiSubscription.subscriptionTableViewCell.subscriptionEndDate.getter : Swift.Optional&lt;__C.UILabel&gt;"
-                  moduleName = "saudiSubscription"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController/Controller/subscriptionTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "85">
-               </Location>
-               <Location
-                  uuid = "29EE1739-3D48-4612-90C4-12E673337515 - 81d34e8385203c5a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "saudiSubscription.subscriptionTableViewCell.subscriptionEndDate.setter : Swift.Optional&lt;__C.UILabel&gt;"
-                  moduleName = "saudiSubscription"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController/Controller/subscriptionTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "136">
-               </Location>
-               <Location
-                  uuid = "29EE1739-3D48-4612-90C4-12E673337515 - 8b05fda99ce180e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "saudiSubscription.subscriptionTableViewCell.subscriptionEndDate.modify : Swift.Optional&lt;__C.UILabel&gt;"
-                  moduleName = "saudiSubscription"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController/Controller/subscriptionTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "29EE1739-3D48-4612-90C4-12E673337515 - de72f57092bf7e91"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "saudiSubscription.subscriptionTableViewCell.subscriptionEndDate.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "saudiSubscription"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController/Controller/subscriptionTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "29EE1739-3D48-4612-90C4-12E673337515 - dd7ca5502ce38c26"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "saudiSubscription.subscriptionTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; saudiSubscription.subscriptionTableViewCell"
-                  moduleName = "saudiSubscription"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController/Controller/subscriptionTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "276">
-               </Location>
-               <Location
-                  uuid = "29EE1739-3D48-4612-90C4-12E673337515 - 9ddb33f8f8f2538e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "saudiSubscription.subscriptionTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;saudiSubscription.subscriptionTableViewCell&gt;"
-                  moduleName = "saudiSubscription"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ashwaqalghamdi/Desktop/saudiSubscription/saudiSubscription/ViewController/Controller/subscriptionTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "233">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6A8609B6-7FED-42C6-A0A2-C98648F7C1D9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "saudiSubscription/ViewController/Controller/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getValueToSubscriptionInfo(info:value:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5A93B8FF-A6E2-47AA-9877-1C99BF8CB49A"
+            uuid = "C4D04F00-E71F-45C9-8826-D4C337BF4D90"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "saudiSubscription/ViewController/Controller/ViewController.swift"
+            filePath = "saudiSubscription/ViewModel/SubscriptionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "50785A78-62E4-46FB-B87E-1EF815EDF009"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "saudiSubscription/ViewController/Controller/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getValueToSubscriptionInfo(info:value:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
