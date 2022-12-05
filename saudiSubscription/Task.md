@@ -6,6 +6,7 @@
 * slide label fix format
 * save all object in fireBase to show in table view 
 * fix animation in slide label 
+* clean code 
 
 #Feature 
 * text color is gliter 

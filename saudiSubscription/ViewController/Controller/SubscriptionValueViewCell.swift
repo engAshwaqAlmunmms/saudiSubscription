@@ -1,5 +1,5 @@
 //
-//  \'\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\.swift
+//  SubscriptionValueViewCell.swift
 //  saudiSubscription
 //
 //  Created by Ashwaq Alghamdi on 11.09.2022.
@@ -7,11 +7,10 @@
 
 import UIKit
 
+class SubscriptionValueViewCell: UITableViewCell {
 
-class SubscriptionTableViewCell: UITableViewCell {
-
-    @IBOutlet public weak var subscriptionName: UILabel!
     @IBOutlet public weak var subscriptionEndDate: UILabel!
+    @IBOutlet public weak var subscriptionName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,9 +18,9 @@ class SubscriptionTableViewCell: UITableViewCell {
     }
     
     private func cellStyle() {
-        subscriptionName.textAlignment = .center
-        subscriptionName.textColor = .black
         subscriptionEndDate.textAlignment = .center
         subscriptionEndDate.textColor = .black
+        subscriptionName.textAlignment = .center
+        subscriptionName.textColor = .black
     }
 }
