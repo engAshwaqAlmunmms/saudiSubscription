@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED3990BF286675D900D6592B /* subsucription.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3990BE286675D900D6592B /* subsucription.swift */; };
 		ED3990C128667A4D00D6592B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED3990C028667A4D00D6592B /* GoogleService-Info.plist */; };
 		ED3990C4286681F000D6592B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990C3286681F000D6592B /* FirebaseAnalytics */; };
 		ED3990C6286681F000D6592B /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990C5286681F000D6592B /* FirebaseDatabaseSwift */; };
@@ -15,15 +14,15 @@
 		ED3990CA286681F100D6592B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990C9286681F100D6592B /* FirebaseMessaging */; };
 		ED3990CC286681F100D6592B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990CB286681F100D6592B /* FirebaseStorage */; };
 		ED3990CE286681F100D6592B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990CD286681F100D6592B /* FirebaseDatabase */; };
-		ED90A5E528CE5AFB00346759 /* SubscriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90A5E328CE5AFB00346759 /* SubscriptionTableViewCell.swift */; };
-		ED90A5E628CE5AFB00346759 /* SubscriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED90A5E428CE5AFB00346759 /* SubscriptionTableViewCell.xib */; };
-		ED90A5E828CE855F00346759 /* SubscriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90A5E728CE855F00346759 /* SubscriptionViewModel.swift */; };
+		ED5E9BB4293EB04000F84AC7 /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E9BB3293EB04000F84AC7 /* LunchViewController.swift */; };
+		ED5E9BB6293EB05200F84AC7 /* LunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5E9BB5293EB05200F84AC7 /* LunchViewController.storyboard */; };
+		ED90A5E528CE5AFB00346759 /* SubscriptionValueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90A5E328CE5AFB00346759 /* SubscriptionValueViewCell.swift */; };
+		ED90A5E628CE5AFB00346759 /* SubscriptionValueViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED90A5E428CE5AFB00346759 /* SubscriptionValueViewCell.xib */; };
 		EDB2E7AE285A53B70021E884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7AD285A53B70021E884 /* AppDelegate.swift */; };
 		EDB2E7B0285A53B70021E884 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7AF285A53B70021E884 /* SceneDelegate.swift */; };
-		EDB2E7B2285A53B70021E884 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7B1285A53B70021E884 /* ViewController.swift */; };
-		EDB2E7B5285A53B70021E884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB2E7B3285A53B70021E884 /* Main.storyboard */; };
+		EDB2E7B2285A53B70021E884 /* SubscriptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7B1285A53B70021E884 /* SubscriptionTableViewController.swift */; };
+		EDB2E7B5285A53B70021E884 /* SubscriptionTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB2E7B3285A53B70021E884 /* SubscriptionTableViewController.storyboard */; };
 		EDB2E7B7285A53B80021E884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB2E7B6285A53B80021E884 /* Assets.xcassets */; };
-		EDB2E7BA285A53B80021E884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */; };
 		EDB2E7C5285A53B80021E884 /* saudiSubscriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7C4285A53B80021E884 /* saudiSubscriptionTests.swift */; };
 		EDB2E7D0285A53B80021E884 /* saudiSubscriptionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7CF285A53B80021E884 /* saudiSubscriptionUITests.swift */; };
 		EDC9FD5128D3A3E800519620 /* SubscriptionTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9FD4F28D3A3E800519620 /* SubscriptionTitleTableViewCell.swift */; };
@@ -48,19 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		ED3990BE286675D900D6592B /* subsucription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subsucription.swift; sourceTree = "<group>"; };
 		ED3990C028667A4D00D6592B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED5E9BB3293EB04000F84AC7 /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
+		ED5E9BB5293EB05200F84AC7 /* LunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LunchViewController.storyboard; sourceTree = "<group>"; };
 		ED68E6A628CF87D5008A776F /* Task.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Task.md; sourceTree = "<group>"; };
-		ED90A5E328CE5AFB00346759 /* SubscriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewCell.swift; sourceTree = "<group>"; };
-		ED90A5E428CE5AFB00346759 /* SubscriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionTableViewCell.xib; sourceTree = "<group>"; };
-		ED90A5E728CE855F00346759 /* SubscriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewModel.swift; sourceTree = "<group>"; };
+		ED90A5E328CE5AFB00346759 /* SubscriptionValueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionValueViewCell.swift; sourceTree = "<group>"; };
+		ED90A5E428CE5AFB00346759 /* SubscriptionValueViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionValueViewCell.xib; sourceTree = "<group>"; };
 		EDB2E7AA285A53B70021E884 /* saudiSubscription.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = saudiSubscription.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB2E7AD285A53B70021E884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDB2E7AF285A53B70021E884 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDB2E7B1285A53B70021E884 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EDB2E7B4285A53B70021E884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDB2E7B1285A53B70021E884 /* SubscriptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTableViewController.swift; sourceTree = "<group>"; };
+		EDB2E7B4285A53B70021E884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SubscriptionTableViewController.storyboard; sourceTree = "<group>"; };
 		EDB2E7B6285A53B80021E884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EDB2E7B9285A53B80021E884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDB2E7BB285A53B80021E884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB2E7C0285A53B80021E884 /* saudiSubscriptionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = saudiSubscriptionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB2E7C4285A53B80021E884 /* saudiSubscriptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saudiSubscriptionTests.swift; sourceTree = "<group>"; };
@@ -103,26 +101,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ED3990BD286675B000D6592B /* Model */ = {
+		ED45C9B028D4A77C006F7016 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				ED3990BE286675D900D6592B /* subsucription.swift */,
+				EDB2E7B3285A53B70021E884 /* SubscriptionTableViewController.storyboard */,
+				ED90A5E428CE5AFB00346759 /* SubscriptionValueViewCell.xib */,
+				EDC9FD5028D3A3E800519620 /* SubscriptionTitleTableViewCell.xib */,
+				ED5E9BB5293EB05200F84AC7 /* LunchViewController.storyboard */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		ED54011728C7CDA200ED000D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				ED90A5E728CE855F00346759 /* SubscriptionViewModel.swift */,
-			);
-			path = ViewModel;
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		ED54011828C7CDB300ED000D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				ED54011B28C7CE5900ED000D /* Controller */,
+				ED45C9B028D4A77C006F7016 /* StoryBoard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -140,13 +134,10 @@
 		ED54011B28C7CE5900ED000D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EDB2E7B1285A53B70021E884 /* ViewController.swift */,
-				ED90A5E328CE5AFB00346759 /* SubscriptionTableViewCell.swift */,
-				EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */,
-				EDB2E7B3285A53B70021E884 /* Main.storyboard */,
-				ED90A5E428CE5AFB00346759 /* SubscriptionTableViewCell.xib */,
+				EDB2E7B1285A53B70021E884 /* SubscriptionTableViewController.swift */,
+				ED90A5E328CE5AFB00346759 /* SubscriptionValueViewCell.swift */,
 				EDC9FD4F28D3A3E800519620 /* SubscriptionTitleTableViewCell.swift */,
-				EDC9FD5028D3A3E800519620 /* SubscriptionTitleTableViewCell.xib */,
+				ED5E9BB3293EB04000F84AC7 /* LunchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,8 +168,6 @@
 				ED68E6A628CF87D5008A776F /* Task.md */,
 				ED54011928C7CE2800ED000D /* supportingFiles */,
 				ED54011828C7CDB300ED000D /* ViewController */,
-				ED54011728C7CDA200ED000D /* ViewModel */,
-				ED3990BD286675B000D6592B /* Model */,
 				ED3990C028667A4D00D6592B /* GoogleService-Info.plist */,
 				EDB2E7BB285A53B80021E884 /* Info.plist */,
 			);
@@ -317,12 +306,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB2E7BA285A53B80021E884 /* LaunchScreen.storyboard in Resources */,
-				ED90A5E628CE5AFB00346759 /* SubscriptionTableViewCell.xib in Resources */,
+				ED90A5E628CE5AFB00346759 /* SubscriptionValueViewCell.xib in Resources */,
 				ED3990C128667A4D00D6592B /* GoogleService-Info.plist in Resources */,
 				EDC9FD5228D3A3E800519620 /* SubscriptionTitleTableViewCell.xib in Resources */,
 				EDB2E7B7285A53B80021E884 /* Assets.xcassets in Resources */,
-				EDB2E7B5285A53B70021E884 /* Main.storyboard in Resources */,
+				EDB2E7B5285A53B70021E884 /* SubscriptionTableViewController.storyboard in Resources */,
+				ED5E9BB6293EB05200F84AC7 /* LunchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,11 +336,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDB2E7B2285A53B70021E884 /* ViewController.swift in Sources */,
-				ED3990BF286675D900D6592B /* subsucription.swift in Sources */,
-				ED90A5E528CE5AFB00346759 /* SubscriptionTableViewCell.swift in Sources */,
-				ED90A5E828CE855F00346759 /* SubscriptionViewModel.swift in Sources */,
+				EDB2E7B2285A53B70021E884 /* SubscriptionTableViewController.swift in Sources */,
+				ED90A5E528CE5AFB00346759 /* SubscriptionValueViewCell.swift in Sources */,
 				EDC9FD5128D3A3E800519620 /* SubscriptionTitleTableViewCell.swift in Sources */,
+				ED5E9BB4293EB04000F84AC7 /* LunchViewController.swift in Sources */,
 				EDB2E7AE285A53B70021E884 /* AppDelegate.swift in Sources */,
 				EDB2E7B0285A53B70021E884 /* SceneDelegate.swift in Sources */,
 			);
@@ -389,20 +377,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EDB2E7B3285A53B70021E884 /* Main.storyboard */ = {
+		EDB2E7B3285A53B70021E884 /* SubscriptionTableViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EDB2E7B4285A53B70021E884 /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EDB2E7B8285A53B80021E884 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EDB2E7B9285A53B80021E884 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = SubscriptionTableViewController.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -529,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JH92DSYAHR;
 				INFOPLIST_FILE = saudiSubscription/Info.plist;
@@ -548,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JH92DSYAHR;
 				INFOPLIST_FILE = saudiSubscription/Info.plist;
