@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أكتتابات السعودية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCY-us-mMa">
-                                <rect key="frame" x="94" y="427.5" width="226.5" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <rect key="frame" x="122.5" y="425" width="169" height="46.5"/>
+                                <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -31,6 +31,9 @@
                             <constraint firstItem="yCY-us-mMa" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="vhl-Dk-jCa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lunchTitle" destination="yCY-us-mMa" id="KqH-fS-Tw4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
