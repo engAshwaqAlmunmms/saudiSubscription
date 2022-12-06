@@ -41,24 +41,11 @@ class SubscriptionTableViewController: UIViewController {
         tableView.register(nibFirstCell, forCellReuseIdentifier: "SubscriptionValue")
         let nibSecondCell = UINib(nibName: "SubscriptionTitleTableViewCell", bundle: nil)
         tableView.register(nibSecondCell, forCellReuseIdentifier: "subscriptionTitle")
-        slideLabel.text = "lklk"
         slideInFromLeft()
     }
     
-    private func calaulateDate() {
-        let isoDate = endDateSubscription ?? ""
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.locale = Locale(identifier: "ar")
-        let endDate = dateFormatter.date(from:isoDate) ?? Date()
-        let todayDate = Date()
-        if todayDate > endDate {
-            self.slideLabel.text = "\(endDate)"
-        }
-    }
-    
     private func slideInFromLeft() {
-        UIView.animate(withDuration: 5.0, delay: 0, options: ([.allowAnimatedContent, .repeat]), animations: {() -> Void in
+        UIView.animate(withDuration: 7.0, delay: 0, options: ([.allowAnimatedContent, .repeat]), animations: {() -> Void in
             self.slideLabel.center = CGPoint(x: -300 , y: self.slideLabel.center.y)
         })
     }
@@ -84,7 +71,17 @@ class SubscriptionTableViewController: UIViewController {
         
         firebaseReference.child("saudiSubscription").child("subscriptionState").observe(.value) { (snap: DataSnapshot) in
             self.subscriptionState.text = snap.value as? String
+            self.calaulateDate()
         }
+    }
+    
+    private func calaulateDate() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let endDate = dateFormatter.date(from:endDateSubscription ?? "") ?? Date()
+        let todayDate = Date()
+        let calculte = Int((todayDate - endDate).asDays())
+        self.slideLabel.text = String("متبقي على نهاية الأكتتاب \(calculte) أيام")
     }
 }
 
@@ -205,3 +202,19 @@ extension UIView {
         return image
     }
 }
+
+extension Date {
+    static func - (lhs: Date, rhs: Date) -> TimeInterval {
+        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
+    }
+}
+
+extension TimeInterval {
+    func asMinutes() -> Double { return self / (60.0) }
+    func asHours()   -> Double { return self / (60.0 * 60.0) }
+    func asDays()    -> Double { return self / (60.0 * 60.0 * 24.0) }
+    func asWeeks()   -> Double { return self / (60.0 * 60.0 * 24.0 * 7.0) }
+    func asMonths()  -> Double { return self / (60.0 * 60.0 * 24.0 * 30.4369) }
+    func asYears()   -> Double { return self / (60.0 * 60.0 * 24.0 * 365.2422) }
+}
+
