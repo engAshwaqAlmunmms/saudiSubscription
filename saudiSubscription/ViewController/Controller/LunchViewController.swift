@@ -9,10 +9,11 @@ import UIKit
 
 class LunchViewController: UIViewController {
     
-    @IBOutlet weak var lunchView: UIView!
+    @IBOutlet weak var lunchTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lunchTitle.flash()
         self.view.setGradientBackgroundForCard()
     }
 }
