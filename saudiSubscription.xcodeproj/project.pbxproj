@@ -16,6 +16,7 @@
 		ED3990CE286681F100D6592B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990CD286681F100D6592B /* FirebaseDatabase */; };
 		ED5E9BB4293EB04000F84AC7 /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E9BB3293EB04000F84AC7 /* LunchViewController.swift */; };
 		ED5E9BB6293EB05200F84AC7 /* LunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5E9BB5293EB05200F84AC7 /* LunchViewController.storyboard */; };
+		ED5E9BB82942454400F84AC7 /* ExtensionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E9BB72942454400F84AC7 /* ExtensionUI.swift */; };
 		ED90A5E528CE5AFB00346759 /* SubscriptionValueViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90A5E328CE5AFB00346759 /* SubscriptionValueViewCell.swift */; };
 		ED90A5E628CE5AFB00346759 /* SubscriptionValueViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED90A5E428CE5AFB00346759 /* SubscriptionValueViewCell.xib */; };
 		EDB2E7AE285A53B70021E884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E7AD285A53B70021E884 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		ED3990C028667A4D00D6592B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED5E9BB3293EB04000F84AC7 /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
 		ED5E9BB5293EB05200F84AC7 /* LunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LunchViewController.storyboard; sourceTree = "<group>"; };
+		ED5E9BB72942454400F84AC7 /* ExtensionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUI.swift; sourceTree = "<group>"; };
 		ED68E6A628CF87D5008A776F /* Task.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Task.md; sourceTree = "<group>"; };
 		ED90A5E328CE5AFB00346759 /* SubscriptionValueViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionValueViewCell.swift; sourceTree = "<group>"; };
 		ED90A5E428CE5AFB00346759 /* SubscriptionValueViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionValueViewCell.xib; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				EDB2E7AD285A53B70021E884 /* AppDelegate.swift */,
 				EDB2E7AF285A53B70021E884 /* SceneDelegate.swift */,
 				EDB2E7B6285A53B80021E884 /* Assets.xcassets */,
+				ED5E9BB72942454400F84AC7 /* ExtensionUI.swift */,
 			);
 			path = supportingFiles;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				ED90A5E528CE5AFB00346759 /* SubscriptionValueViewCell.swift in Sources */,
 				EDC9FD5128D3A3E800519620 /* SubscriptionTitleTableViewCell.swift in Sources */,
 				ED5E9BB4293EB04000F84AC7 /* LunchViewController.swift in Sources */,
+				ED5E9BB82942454400F84AC7 /* ExtensionUI.swift in Sources */,
 				EDB2E7AE285A53B70021E884 /* AppDelegate.swift in Sources */,
 				EDB2E7B0285A53B70021E884 /* SceneDelegate.swift in Sources */,
 			);
