@@ -1,12 +1,10 @@
 #Remaining work:-
 
 #Fix 
-* fix animation in slide label 
 * clean code 
+* slide label in negative number "انتهى اكتتاب..."
 
 #Feature 
-* logo 
-* applay unit test 
 * notification 
 * widget 
 * handle empty tables
