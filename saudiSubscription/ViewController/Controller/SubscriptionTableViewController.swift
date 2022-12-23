@@ -21,9 +21,15 @@ class SubscriptionTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleVC: UILabel!
     
+    var oldSubscriptionDictionary: [String: String] = [:] {
+        willSet {
+            self.tableView.reloadData()
+        }
+    }
+
     var endDateSubscription:String?
     var firebaseReference = Database.database().reference()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -42,11 +48,12 @@ class SubscriptionTableViewController: UIViewController {
         let nibSecondCell = UINib(nibName: "SubscriptionTitleTableViewCell", bundle: nil)
         tableView.register(nibSecondCell, forCellReuseIdentifier: "subscriptionTitle")
         slideInFromLeft()
+        tableView.reloadData()
     }
     
     private func slideInFromLeft() {
-        UIView.animate(withDuration: 7.0, delay: 0, options: ([.allowAnimatedContent, .repeat]), animations: {() -> Void in
-            self.slideLabel.center = CGPoint(x: -300 , y: self.slideLabel.center.y)
+        UIView.animate(withDuration: 9.0, delay: 0, options: ([.curveLinear, .repeat]), animations: {() -> Void in
+            self.slideLabel.center = CGPoint(x: 0 - self.slideLabel.bounds.size.width/2 , y: self.slideLabel.center.y)
         })
     }
     
@@ -73,6 +80,20 @@ class SubscriptionTableViewController: UIViewController {
             self.subscriptionState.text = snap.value as? String
             self.calaulateDate()
         }
+        
+        firebaseReference.child("oldSaudiSubscription").observe(.value) {(snapshot) in
+            if let eachDict = snapshot.value as? NSDictionary {
+                let name = eachDict["companyName"] as? String
+                let endDate = eachDict["subscriptionEndDate"] as? String
+                self.getSubscription(subscriptionName: name ?? "", subscriptionDate: endDate ?? "")
+            }
+        }
+    }
+    
+    private func getSubscription(subscriptionName: String, subscriptionDate: String) {
+        DispatchQueue.main.async {
+            self.oldSubscriptionDictionary[subscriptionName] = subscriptionDate
+        }
     }
     
     private func calaulateDate() {
@@ -81,140 +102,43 @@ class SubscriptionTableViewController: UIViewController {
         let endDate = dateFormatter.date(from:endDateSubscription ?? "") ?? Date()
         let todayDate = Date()
         let calculte = Int((todayDate - endDate).asDays())
-        self.slideLabel.text = String("متبقي على نهاية الأكتتاب \(calculte) أيام")
+        self.slideLabel.text = String("متبقي على نهاية الأكتتاب \(calculte) يوم")
     }
 }
 
 extension SubscriptionTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2 // old subscription count
+        if oldSubscriptionDictionary.count == 0 {
+            return 1
+        }
+        return oldSubscriptionDictionary.count
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.layer.cornerRadius = 10
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        switch indexPath.row {
-        case 0:
-            cell.layer.maskedCorners =
-            [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        case 1:
-            cell.layer.maskedCorners =  [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-        default:
-            break
+        cell.layer.cornerRadius = 0
+        if indexPath.row == 0 {
+            cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+            cell.layer.cornerRadius = 10
+        } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            cell.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+            cell.layer.cornerRadius = 10
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
+        if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionTitle", for: indexPath) as? SubscriptionTitleTableViewCell
+            cell?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8524881325)
             return cell ?? UITableViewCell()
-            
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SubscriptionValue", for: indexPath) as? SubscriptionValueViewCell
-            
-            firebaseReference.child("oldSaudiSubscription").child("companyName").observe(.value) { (snap: DataSnapshot) in
-                cell?.subscriptionName.text = snap.value as? String
-            }
-            
-            firebaseReference.child("oldSaudiSubscription").child("subscriptionEndDate").observe(.value) { (snap: DataSnapshot) in
-                    cell?.subscriptionEndDate.text = snap.value as? String
-            }
-            
-            return cell ?? UITableViewCell()
-            
-        default:
-            return UITableViewCell()
         }
-    }
-    
-}
-
-extension UIView {
-    public func setGradientBackgroundForCard() {
-        let gradientLayer = CAGradientLayer()
-        let middleColor = #colorLiteral(red: 0.5960784314, green: 0.6862745098, blue: 0.737254902, alpha: 1).cgColor
-        let buttomColor = #colorLiteral(red: 0.9215686275, green: 0.6980392157, blue: 0.4370376483, alpha: 0.7763005945).cgColor
-        gradientLayer.colors = [buttomColor, middleColor]
-        gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
-        gradientLayer.frame = self.frame
-        gradientLayer.frame.size = self.frame.size
-        self.layer.insertSublayer(gradientLayer, at:0)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SubscriptionValue", for: indexPath) as? SubscriptionValueViewCell
+        cell?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8629946677)
+            let arrayOfKeys = Array(self.oldSubscriptionDictionary.keys.sorted(by: { $0 > $1 }))
+            let arrayOfValues = Array(self.oldSubscriptionDictionary.values.sorted(by: { $0 > $1 }))
+            cell?.subscriptionName.text = arrayOfKeys[indexPath.row]
+            cell?.subscriptionEndDate.text = arrayOfValues[indexPath.row]
+        return cell ?? UITableViewCell()
     }
 }
-
-extension UILabel {
-
-    func flash() {
-        // Take as snapshot of the button and render as a template
-        let snapshot = self.snapshot?.withRenderingMode(.alwaysTemplate)
-        let imageView = UIImageView(image: snapshot)
-        // Add it image view and render close to white
-        imageView.tintColor = UIColor(white: 0.9, alpha: 1.0)
-        guard let image = imageView.snapshot  else { return }
-        let width = image.size.width
-        let height = image.size.height
-        // Create CALayer and add light content to it
-        let shineLayer = CALayer()
-        shineLayer.contents = image.cgImage
-        shineLayer.frame = bounds
-
-        // create CAGradientLayer that will act as mask clear = not shown, opaque = rendered
-        // Adjust gradient to increase width and angle of highlight
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.clear.cgColor,
-                                UIColor.clear.cgColor,
-                                UIColor.black.cgColor,
-                                UIColor.clear.cgColor,
-                                UIColor.clear.cgColor]
-        gradientLayer.locations = [0.0, 0.35, 0.50, 0.65, 0.0]
-        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
-
-        gradientLayer.frame = CGRect(x: -width, y: 0, width: width, height: height)
-        // Create CA animation that will move mask from outside bounds left to outside bounds right
-        let animation = CABasicAnimation(keyPath: "position.x")
-        animation.byValue = width * 2
-        // How long it takes for glare to move across button
-        animation.duration = 5
-        // Repeat forever
-        animation.repeatCount = Float.greatestFiniteMagnitude
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-
-        layer.addSublayer(shineLayer)
-        shineLayer.mask = gradientLayer
-
-        // Add animation
-        gradientLayer.add(animation, forKey: "shine")
-    }
-}
-
-extension UIView {
-    // Helper to snapshot a view
-    var snapshot: UIImage? {
-        let renderer = UIGraphicsImageRenderer(size: bounds.size)
-
-        let image = renderer.image { context in
-            layer.render(in: context.cgContext)
-        }
-        return image
-    }
-}
-
-extension Date {
-    static func - (lhs: Date, rhs: Date) -> TimeInterval {
-        return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
-    }
-}
-
-extension TimeInterval {
-    func asMinutes() -> Double { return self / (60.0) }
-    func asHours()   -> Double { return self / (60.0 * 60.0) }
-    func asDays()    -> Double { return self / (60.0 * 60.0 * 24.0) }
-    func asWeeks()   -> Double { return self / (60.0 * 60.0 * 24.0 * 7.0) }
-    func asMonths()  -> Double { return self / (60.0 * 60.0 * 24.0 * 30.4369) }
-    func asYears()   -> Double { return self / (60.0 * 60.0 * 24.0 * 365.2422) }
-}
-
