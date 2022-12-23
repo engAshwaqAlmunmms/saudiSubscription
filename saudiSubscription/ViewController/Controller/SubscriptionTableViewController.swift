@@ -103,6 +103,7 @@ class SubscriptionTableViewController: UIViewController {
         let todayDate = Date()
         let calculte = Int((todayDate - endDate).asDays())
         self.slideLabel.text = String("متبقي على نهاية الأكتتاب \(calculte) يوم")
+        self.slideLabel.textColor = .white
     }
 }
 
