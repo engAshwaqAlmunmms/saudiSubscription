@@ -140,11 +140,8 @@ extension SubscriptionTableViewController: UITableViewDataSource, UITableViewDel
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubscriptionValue", for: indexPath) as? SubscriptionValueViewCell
-        cell?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8629946677)
-            let arrayOfKeys = Array(self.oldSubscriptionDictionary.keys.sorted(by: { $0 > $1 }))
-            let arrayOfValues = Array(self.oldSubscriptionDictionary.values.sorted(by: { $0 > $1 }))
-            cell?.subscriptionName.text = arrayOfKeys[indexPath.row]
-            cell?.subscriptionEndDate.text = arrayOfValues[indexPath.row]
+        cell?.subscriptionName.text = arrayOfSubscription[indexPath.row].subscriptionName
+        cell?.subscriptionEndDate.text = arrayOfSubscription[indexPath.row].subscriptionDate
         return cell ?? UITableViewCell()
     }
 }
