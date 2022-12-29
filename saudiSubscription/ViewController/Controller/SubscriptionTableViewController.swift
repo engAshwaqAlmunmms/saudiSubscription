@@ -27,7 +27,9 @@ class SubscriptionTableViewController: UIViewController {
     @IBOutlet weak var titleVC: UILabel!
     var endDateSubscription:String?
     var firebaseReference = Database.database().reference()
-
+    var oldSubscriptionDictionary: [String: String] = [:]
+    var arrayOfSubscription = [Subscription]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -54,7 +56,6 @@ class SubscriptionTableViewController: UIViewController {
         let nibSecondCell = UINib(nibName: "SubscriptionTitleTableViewCell", bundle: nil)
         tableView.register(nibSecondCell, forCellReuseIdentifier: "subscriptionTitle")
         slideInFromLeft()
-        tableView.reloadData()
     }
     
     private func slideInFromLeft() {
