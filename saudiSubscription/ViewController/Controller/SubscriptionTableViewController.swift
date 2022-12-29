@@ -115,10 +115,8 @@ class SubscriptionTableViewController: UIViewController {
 extension SubscriptionTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if oldSubscriptionDictionary.count == 0 {
             return 1
         }
-        return oldSubscriptionDictionary.count
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -135,7 +133,6 @@ extension SubscriptionTableViewController: UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "subscriptionTitle", for: indexPath) as? SubscriptionTitleTableViewCell
-            cell?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8524881325)
             return cell ?? UITableViewCell()
         }
         
