@@ -8,6 +8,11 @@
 import UIKit
 import Firebase
 
+struct Subscription: Codable {
+    var subscriptionName: String? = ""
+    var subscriptionDate: String? = ""
+}
+
 class SubscriptionTableViewController: UIViewController {
     
     @IBOutlet weak var motherView: UIView!
