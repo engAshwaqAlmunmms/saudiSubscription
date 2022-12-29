@@ -14,13 +14,12 @@ class SubscriptionTitleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8524881325)
         subscriptionEndDate.textAlignment = .center
         subscriptionEndDate.textColor = .black
         subscriptionEndDate.text = "أنتهئ الأكتتاب منذ تاريخ"
         subscriptionName.textAlignment = .center
         subscriptionName.textColor = .black
         subscriptionName.text = "أسم الأكتتاب"
-
-
     }
 }
