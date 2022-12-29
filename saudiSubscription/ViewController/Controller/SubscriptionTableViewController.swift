@@ -95,9 +95,22 @@ class SubscriptionTableViewController: UIViewController {
         }
     }
     
-    private func getSubscription(subscriptionName: String, subscriptionDate: String) {
-        DispatchQueue.main.async {
-            self.oldSubscriptionDictionary[subscriptionName] = subscriptionDate
+    private func getSubscription(subscriptionName: String? = nil, subscriptionDate: String? = nil) {
+        do {
+            let newSubscription = Subscription(subscriptionName: subscriptionName, subscriptionDate: subscriptionDate)
+            var uniquePosts = [Subscription]()
+            uniquePosts.insert(newSubscription, at: 0)
+            for post in uniquePosts {
+                let name = !self.arrayOfSubscription.contains(where: {$0.subscriptionName == post.subscriptionName })
+                let date = !self.arrayOfSubscription.contains(where: {$0.subscriptionDate == post.subscriptionDate })
+                if name && date {
+                    self.arrayOfSubscription.insert(post, at: 0)
+                }
+            }
+            let data = try JSONEncoder().encode(self.arrayOfSubscription)
+            UserDefaults.standard.set(data, forKey: "subscription")
+        } catch {
+            print(error.localizedDescription)
         }
     }
     
