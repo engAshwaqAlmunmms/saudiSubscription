@@ -24,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45.5" id="gWP-iy-XTG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="34"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNy-Ct-FFF">
