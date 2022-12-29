@@ -110,13 +110,16 @@ class SubscriptionTableViewController: UIViewController {
         self.slideLabel.text = String("متبقي على نهاية الأكتتاب \(calculte) يوم")
         self.slideLabel.textColor = .white
     }
+    
 }
 
 extension SubscriptionTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if arrayOfSubscription.count == 0 {
             return 1
         }
+        return arrayOfSubscription.count
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
