@@ -14,10 +14,7 @@ class SubscriptionValueViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellStyle()
-    }
-    
-    private func cellStyle() {
+        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8629946677)
         subscriptionEndDate.textAlignment = .center
         subscriptionEndDate.textColor = .black
         subscriptionName.textAlignment = .center
