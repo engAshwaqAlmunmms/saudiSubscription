@@ -33,6 +33,14 @@ class SubscriptionTableViewController: UIViewController {
         setUpView()
         getValueToSubscriptionInfo()
         titleVC.flash()
+        load()
+    }
+    
+    func load() {
+        guard let data = UserDefaults.standard.data(forKey: "subscription"),
+              let savedSubscription = try? JSONDecoder().decode([Subscription].self, from: data) else { arrayOfSubscription = []; return }
+        print(savedSubscription)
+        arrayOfSubscription = savedSubscription
     }
     
     private func setUpView() {
