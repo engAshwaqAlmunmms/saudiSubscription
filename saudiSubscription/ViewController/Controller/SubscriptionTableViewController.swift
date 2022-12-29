@@ -25,13 +25,6 @@ class SubscriptionTableViewController: UIViewController {
     @IBOutlet weak var slideLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleVC: UILabel!
-    
-    var oldSubscriptionDictionary: [String: String] = [:] {
-        willSet {
-            self.tableView.reloadData()
-        }
-    }
-
     var endDateSubscription:String?
     var firebaseReference = Database.database().reference()
 
