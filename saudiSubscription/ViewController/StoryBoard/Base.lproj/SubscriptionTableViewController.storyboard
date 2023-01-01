@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -138,8 +137,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSr-ot-aNr">
                                 <rect key="frame" x="0.0" y="429" width="414" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owh-wn-odd">
-                                        <rect key="frame" x="5" y="17" width="404" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owh-wn-odd">
+                                        <rect key="frame" x="-200" y="17" width="814" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -147,15 +146,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="owh-wn-odd" secondAttribute="trailing" constant="5" id="2pt-IE-VTP"/>
+                                    <constraint firstAttribute="trailing" secondItem="owh-wn-odd" secondAttribute="trailing" constant="-200" id="2pt-IE-VTP"/>
                                     <constraint firstAttribute="bottom" secondItem="owh-wn-odd" secondAttribute="bottom" constant="17" id="5wP-VT-CrP"/>
-                                    <constraint firstItem="owh-wn-odd" firstAttribute="leading" secondItem="RSr-ot-aNr" secondAttribute="leading" constant="5" id="J4N-Hj-wkP"/>
+                                    <constraint firstItem="owh-wn-odd" firstAttribute="leading" secondItem="RSr-ot-aNr" secondAttribute="leading" constant="-200" id="J4N-Hj-wkP"/>
                                     <constraint firstAttribute="height" constant="55" id="KEm-A6-YTd"/>
                                     <constraint firstItem="owh-wn-odd" firstAttribute="top" secondItem="RSr-ot-aNr" secondAttribute="top" constant="17" id="nHz-cD-3Du"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" alpha="0.65000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5oG-Zq-HLQ">
-                                <rect key="frame" x="20" y="524.5" width="374" height="352.5"/>
+                                <rect key="frame" x="20" y="530.5" width="374" height="346.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -164,8 +163,8 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الأكتتابات السابقة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08P-yo-kbl">
-                                <rect key="frame" x="249" y="489" width="145" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="489" width="394" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -175,7 +174,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cNy-Ct-FFF" secondAttribute="trailing" constant="20" id="11Y-3F-Y4q"/>
                             <constraint firstItem="RSr-ot-aNr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BPJ-Fe-oz5"/>
-                            <constraint firstItem="08P-yo-kbl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="249" id="CM3-4k-Opi"/>
+                            <constraint firstItem="08P-yo-kbl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CM3-4k-Opi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="08P-yo-kbl" secondAttribute="trailing" constant="20" id="ESN-8n-2xw"/>
                             <constraint firstItem="5oG-Zq-HLQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gm2-gZ-tWY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RSr-ot-aNr" secondAttribute="bottom" constant="378" id="Jkp-YO-zAb"/>
