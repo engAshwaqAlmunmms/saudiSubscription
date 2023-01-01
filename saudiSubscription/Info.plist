@@ -45,8 +45,6 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LunchViewController</string>
-	<key>UIMainStoryboardFile</key>
-	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
