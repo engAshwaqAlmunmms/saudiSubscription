@@ -2,9 +2,12 @@
 
 #Fix 
 * clean code 
-* slide label in negative number "انتهى اكتتاب..."
+* slide label if finished
+* any icon instead empty table view 
+* flag if send remove last row in table view 
+
 
 #Feature 
 * notification 
 * widget 
-* handle empty tables
+* action outside the App
