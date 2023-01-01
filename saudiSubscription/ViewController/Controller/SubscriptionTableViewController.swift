@@ -27,8 +27,14 @@ class SubscriptionTableViewController: UIViewController {
     @IBOutlet weak var titleVC: UILabel!
     var endDateSubscription:String?
     var firebaseReference = Database.database().reference()
-    var oldSubscriptionDictionary: [String: String] = [:]
-    var arrayOfSubscription = [Subscription]()
+    
+    var arrayOfSubscription = [Subscription]() {
+        willSet{
+            tableView.reloadData()
+        }
+    }
+    
+    var dictionaryOfSubscription = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +46,11 @@ class SubscriptionTableViewController: UIViewController {
     
     func load() {
         guard let data = UserDefaults.standard.data(forKey: "subscription"),
-              let savedSubscription = try? JSONDecoder().decode([Subscription].self, from: data) else { arrayOfSubscription = []; return }
-        print(savedSubscription)
+              let savedSubscription = try? JSONDecoder().decode([Subscription].self, from: data) else { return arrayOfSubscription = [] }
         arrayOfSubscription = savedSubscription
     }
     
     private func setUpView() {
-        
         self.motherView.setGradientBackgroundForCard()
         cardView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tableView.dataSource = self
@@ -55,6 +59,9 @@ class SubscriptionTableViewController: UIViewController {
         tableView.register(nibFirstCell, forCellReuseIdentifier: "SubscriptionValue")
         let nibSecondCell = UINib(nibName: "SubscriptionTitleTableViewCell", bundle: nil)
         tableView.register(nibSecondCell, forCellReuseIdentifier: "subscriptionTitle")
+        if arrayOfSubscription.count == 0 {
+            tableView.isHidden = true
+        }
         slideInFromLeft()
     }
     
@@ -88,33 +95,39 @@ class SubscriptionTableViewController: UIViewController {
             self.calaulateDate()
         }
         
-        firebaseReference.child("oldSaudiSubscription").observe(.value) {(snapshot) in
-            if let eachDict = snapshot.value as? NSDictionary {
-                let name = eachDict["companyName"] as? String
-                let endDate = eachDict["subscriptionEndDate"] as? String
-                self.getSubscription(subscriptionName: name ?? "", subscriptionDate: endDate ?? "")
-            }
-        }
-    }
-    
-    private func getSubscription(subscriptionName: String? = nil, subscriptionDate: String? = nil) {
-        do {
-            let newSubscription = Subscription(subscriptionName: subscriptionName, subscriptionDate: subscriptionDate)
-            var uniquePosts = [Subscription]()
-            uniquePosts.insert(newSubscription, at: 0)
-            for post in uniquePosts {
-                let name = !self.arrayOfSubscription.contains(where: {$0.subscriptionName == post.subscriptionName })
-                let date = !self.arrayOfSubscription.contains(where: {$0.subscriptionDate == post.subscriptionDate })
-                if name && date {
-                    self.arrayOfSubscription.insert(post, at: 0)
+        firebaseReference.child("oldSaudiSubscription").observe(.value, with: { [self] snapshot in
+                if let eachDict = snapshot.value as? NSDictionary {
+                    let name = eachDict["companyName"] as? String
+                    let endDate = eachDict["subscriptionEndDate"] as? String
+                    let newSubscription = Subscription(subscriptionName: name, subscriptionDate: endDate)
+                        
+                    self.dictionaryOfSubscription.updateValue(newSubscription.subscriptionDate ?? "", forKey: newSubscription.subscriptionName ?? "")
+                    
+                    for (key, value) in dictionaryOfSubscription {
+                        var emptyArray = [Subscription]()
+                        emptyArray.append(Subscription(subscriptionName: key, subscriptionDate: value))
+                        
+                        for values in emptyArray {
+                            let name = !self.arrayOfSubscription.contains(where: {$0.subscriptionName == values.subscriptionName })
+                            
+                            let date = !self.arrayOfSubscription.contains(where: {$0.subscriptionDate == values.subscriptionDate })
+                            
+                            if name && date {
+                                self.arrayOfSubscription.insert(values, at: 1)
+                            }
+                        }
+                    }
+                    
+                    do {
+                        let data = try JSONEncoder().encode(self.arrayOfSubscription)
+                        UserDefaults.standard.set(data, forKey: "subscription")
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                    
                 }
-            }
-            let data = try JSONEncoder().encode(self.arrayOfSubscription)
-            UserDefaults.standard.set(data, forKey: "subscription")
-        } catch {
-            print(error.localizedDescription)
+            })
         }
-    }
     
     private func calaulateDate() {
         let dateFormatter = DateFormatter()
@@ -131,14 +144,10 @@ class SubscriptionTableViewController: UIViewController {
 extension SubscriptionTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if arrayOfSubscription.count == 0 {
-            return 1
-        }
         return arrayOfSubscription.count
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.layer.cornerRadius = 0
         if indexPath.row == 0 {
             cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
             cell.layer.cornerRadius = 10
