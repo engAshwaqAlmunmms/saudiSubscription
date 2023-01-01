@@ -127,13 +127,16 @@ class SubscriptionTableViewController: UIViewController {
         }
     
     private func calaulateDate() {
+        self.slideLabel.textColor = .white
+        guard endDateSubscription?.isEmpty == false else {return
+            self.slideLabel.text = String("لا يوجد اكتتابات")
+        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let endDate = dateFormatter.date(from:endDateSubscription ?? "") ?? Date()
         let todayDate = Date()
         let calculte = Int((todayDate - endDate).asDays())
-        self.slideLabel.text = String("متبقي على نهاية الأكتتاب \(calculte) يوم")
-        self.slideLabel.textColor = .white
+        self.slideLabel.text = String("متبقي على نهاية الأكتتاب \(abs(calculte)) يوم")
     }
     
 }
