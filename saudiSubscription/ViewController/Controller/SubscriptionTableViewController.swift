@@ -8,13 +8,9 @@
 import UIKit
 import Firebase
 
-struct Subscription: Codable {
-    var subscriptionName: String? = ""
-    var subscriptionDate: String? = ""
-}
-
 class SubscriptionTableViewController: UIViewController {
     
+    // MARK : - @IBOutlet
     @IBOutlet weak var motherView: UIView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var companyName: UILabel!
@@ -25,16 +21,17 @@ class SubscriptionTableViewController: UIViewController {
     @IBOutlet weak var slideLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleVC: UILabel!
-    var endDateSubscription:String?
-    var firebaseReference = Database.database().reference()
     
-    var arrayOfSubscription = [Subscription]() {
+    // MARK : - vairable
+    var firebaseReference = Database.database().reference()
+    private var endDateSubscription:String?
+    private  var dictionaryOfSubscription = [String:String]()
+    private var arrayOfSubscription = [Subscription]() {
         willSet{
             tableView.reloadData()
         }
     }
     
-    var dictionaryOfSubscription = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +41,7 @@ class SubscriptionTableViewController: UIViewController {
         load()
     }
     
-    func load() {
+    private func load() {
         guard let data = UserDefaults.standard.data(forKey: "subscription"),
               let savedSubscription = try? JSONDecoder().decode([Subscription].self, from: data) else { return arrayOfSubscription = [] }
         arrayOfSubscription = savedSubscription
@@ -71,7 +68,7 @@ class SubscriptionTableViewController: UIViewController {
         })
     }
     
-    public func getValueToSubscriptionInfo() {
+    private func getValueToSubscriptionInfo() {
         
         firebaseReference.child("saudiSubscription").child("companyName").observe(.value) { (snap: DataSnapshot) in
             self.companyName.text = snap.value as? String

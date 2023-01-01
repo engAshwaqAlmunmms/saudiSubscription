@@ -14,6 +14,7 @@
 		ED3990CA286681F100D6592B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990C9286681F100D6592B /* FirebaseMessaging */; };
 		ED3990CC286681F100D6592B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990CB286681F100D6592B /* FirebaseStorage */; };
 		ED3990CE286681F100D6592B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = ED3990CD286681F100D6592B /* FirebaseDatabase */; };
+		ED4BBD442961F8D700E02A34 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4BBD432961F8D700E02A34 /* Subscription.swift */; };
 		ED5E9BB4293EB04000F84AC7 /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E9BB3293EB04000F84AC7 /* LunchViewController.swift */; };
 		ED5E9BB6293EB05200F84AC7 /* LunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5E9BB5293EB05200F84AC7 /* LunchViewController.storyboard */; };
 		ED5E9BB82942454400F84AC7 /* ExtensionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5E9BB72942454400F84AC7 /* ExtensionUI.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		ED3990C028667A4D00D6592B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED4BBD432961F8D700E02A34 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		ED5E9BB3293EB04000F84AC7 /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
 		ED5E9BB5293EB05200F84AC7 /* LunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LunchViewController.storyboard; sourceTree = "<group>"; };
 		ED5E9BB72942454400F84AC7 /* ExtensionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUI.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ED45C9B028D4A77C006F7016 /* StoryBoard */ = {
+		ED45C9B028D4A77C006F7016 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				EDB2E7B3285A53B70021E884 /* SubscriptionTableViewController.storyboard */,
@@ -111,14 +113,22 @@
 				EDC9FD5028D3A3E800519620 /* SubscriptionTitleTableViewCell.xib */,
 				ED5E9BB5293EB05200F84AC7 /* LunchViewController.storyboard */,
 			);
-			path = StoryBoard;
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		ED4BBD422961F8CC00E02A34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED4BBD432961F8D700E02A34 /* Subscription.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ED54011828C7CDB300ED000D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				ED54011B28C7CE5900ED000D /* Controller */,
-				ED45C9B028D4A77C006F7016 /* StoryBoard */,
+				ED45C9B028D4A77C006F7016 /* Storyboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -168,6 +178,7 @@
 		EDB2E7AC285A53B70021E884 /* saudiSubscription */ = {
 			isa = PBXGroup;
 			children = (
+				ED4BBD422961F8CC00E02A34 /* Model */,
 				ED68E6A628CF87D5008A776F /* Task.md */,
 				ED54011928C7CE2800ED000D /* supportingFiles */,
 				ED54011828C7CDB300ED000D /* ViewController */,
@@ -341,6 +352,7 @@
 			files = (
 				EDB2E7B2285A53B70021E884 /* SubscriptionTableViewController.swift in Sources */,
 				ED90A5E528CE5AFB00346759 /* SubscriptionValueViewCell.swift in Sources */,
+				ED4BBD442961F8D700E02A34 /* Subscription.swift in Sources */,
 				EDC9FD5128D3A3E800519620 /* SubscriptionTitleTableViewCell.swift in Sources */,
 				ED5E9BB4293EB04000F84AC7 /* LunchViewController.swift in Sources */,
 				ED5E9BB82942454400F84AC7 /* ExtensionUI.swift in Sources */,
