@@ -22,7 +22,7 @@ class SubscriptionTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleVC: UILabel!
     
-    // MARK : - vairable
+    // MARK : - variable
     var firebaseReference = Database.database().reference()
     private var endDateSubscription:String?
     private  var dictionaryOfSubscription = [String:String]()
@@ -31,7 +31,6 @@ class SubscriptionTableViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
