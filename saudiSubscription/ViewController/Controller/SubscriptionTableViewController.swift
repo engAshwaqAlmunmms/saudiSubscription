@@ -129,7 +129,7 @@ class SubscriptionTableViewController: UIViewController {
     private func calaulateDate() {
         self.slideLabel.textColor = .white
         guard endDateSubscription?.isEmpty == false else {return
-            self.slideLabel.text = String("لا يوجد اكتتابات")
+            self.slideLabel.text = String("لا يوجد اكتتابات الأن")
         }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
