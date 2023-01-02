@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  saudiSubscription
+//  saudiIPOs
 //
 //  Created by Ashwaq Alghamdi on 15.06.2022.
 //

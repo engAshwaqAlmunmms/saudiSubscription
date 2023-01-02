@@ -2,16 +2,17 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Subscription Table View Controller-->
+        <!--Os Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="SubscriptionTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SubscriptionTableViewController" customModule="saudiSubscription" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IPOsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="IPOsTableViewController" customModule="saudiSubscription" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +102,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="PRc-fL-NoS">
-                                                <rect key="frame" x="183" y="232" width="173" height="53"/>
+                                                <rect key="frame" x="210" y="232" width="146" height="53"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXc-3T-M5x">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="53"/>
@@ -109,8 +110,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شرعية الأكتتاب :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqg-rc-GUq">
-                                                        <rect key="frame" x="65" y="0.0" width="108" height="53"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سعر الطرح :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqg-rc-GUq">
+                                                        <rect key="frame" x="65" y="0.0" width="81" height="53"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -154,7 +155,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" alpha="0.65000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5oG-Zq-HLQ">
-                                <rect key="frame" x="20" y="530.5" width="374" height="346.5"/>
+                                <rect key="frame" x="20" y="530.5" width="374" height="335.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -178,7 +179,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="08P-yo-kbl" secondAttribute="trailing" constant="20" id="ESN-8n-2xw"/>
                             <constraint firstItem="5oG-Zq-HLQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Gm2-gZ-tWY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RSr-ot-aNr" secondAttribute="bottom" constant="378" id="Jkp-YO-zAb"/>
-                            <constraint firstAttribute="bottom" secondItem="5oG-Zq-HLQ" secondAttribute="bottom" constant="19" id="JmQ-Eb-r7M"/>
+                            <constraint firstAttribute="bottom" secondItem="5oG-Zq-HLQ" secondAttribute="bottom" constant="30" id="JmQ-Eb-r7M"/>
                             <constraint firstItem="5oG-Zq-HLQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="Kaw-z8-Wp6"/>
                             <constraint firstItem="6ka-bc-hr7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="L5u-DD-nbc"/>
                             <constraint firstItem="5oG-Zq-HLQ" firstAttribute="top" secondItem="08P-yo-kbl" secondAttribute="bottom" constant="15" id="T7o-AT-gAR"/>
@@ -192,14 +193,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bankName" destination="dM0-rC-Fjz" id="bSP-4U-pNi"/>
                         <outlet property="cardView" destination="cNy-Ct-FFF" id="wj7-UR-h5G"/>
                         <outlet property="companyName" destination="nqs-AE-eYt" id="0DA-rH-8Yg"/>
                         <outlet property="motherView" destination="8bC-Xf-vdC" id="Hfk-23-4zw"/>
+                        <outlet property="offeringBankName" destination="dM0-rC-Fjz" id="bSP-4U-pNi"/>
+                        <outlet property="offeringCloseDate" destination="k4a-he-JrT" id="7IW-6j-37K"/>
+                        <outlet property="offeringDate" destination="BY1-Zf-XDe" id="2bY-OI-O8l"/>
+                        <outlet property="offeringPrice" destination="MXc-3T-M5x" id="xis-gm-KSj"/>
                         <outlet property="slideLabel" destination="owh-wn-odd" id="sZa-71-3TH"/>
-                        <outlet property="subscriptionEndDate" destination="k4a-he-JrT" id="7IW-6j-37K"/>
-                        <outlet property="subscriptionStartDate" destination="BY1-Zf-XDe" id="2bY-OI-O8l"/>
-                        <outlet property="subscriptionState" destination="MXc-3T-M5x" id="xis-gm-KSj"/>
                         <outlet property="tableView" destination="5oG-Zq-HLQ" id="2B4-1j-lNV"/>
                         <outlet property="titleVC" destination="6ka-bc-hr7" id="hpw-c8-Ayw"/>
                     </connections>
