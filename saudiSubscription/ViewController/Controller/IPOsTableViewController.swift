@@ -74,7 +74,7 @@ class IPOsTableViewController: UIViewController {
         firebaseReference.child("KSA_IPOs").child("COMPANY_NAME").observe(.value) { (snap: DataSnapshot) in
             self.companyName.text = snap.value as? String
         }
-    
+        
         firebaseReference.child("KSA_IPOs").child("OFFERING_DATE").observe(.value) { (snap: DataSnapshot) in
             self.offeringDate.text = snap.value as? String
         }
@@ -94,38 +94,45 @@ class IPOsTableViewController: UIViewController {
         }
         
         firebaseReference.child("OLD_IPOs").observe(.value, with: { [self] snapshot in
-                if let eachDict = snapshot.value as? NSDictionary {
-                    let name = eachDict["OFFERING_BANKS"] as? String
-                    let endDate = eachDict["CLOSING_DATE"] as? String
-                    let newSubscription = SaudiOffering(offeringName: name, offeringDate: endDate)
-                    
-                    self.dictionaryOfOffering.updateValue(newSubscription.offeringDate ?? "", forKey: newSubscription.offeringName ?? "")
-
-                    for (key, value) in dictionaryOfOffering {
-                        var emptyArray = [SaudiOffering]()
-                        emptyArray.append(SaudiOffering(offeringName: key, offeringDate: value))
-                        
-                        for values in emptyArray {
-                            let name = !self.arrayOfOffering.contains(where: {$0.offeringName == values.offeringName })
-                            
-                            let date = !self.arrayOfOffering.contains(where: {$0.offeringDate == values.offeringDate })
-                            
-                            if name && date {
-                                self.arrayOfOffering.insert(values, at: 1)
-                            }
+            if let eachDict = snapshot.value as? NSDictionary {
+                let name = eachDict["OFFERING_BANKS"] as? String
+                let endDate = eachDict["CLOSING_DATE"] as? String
+                let newSubscription = SaudiOffering(offeringName: name, offeringDate: endDate)
+                
+                self.dictionaryOfOffering.updateValue(newSubscription.offeringDate ?? "", forKey: newSubscription.offeringName ?? "")
+                for (key, value) in dictionaryOfOffering {
+                    var emptyArray = [SaudiOffering]()
+                    emptyArray.append(SaudiOffering(offeringName: key, offeringDate: value))
+                    for values in emptyArray {
+                        let name = !self.arrayOfOffering.contains(where: {$0.offeringName == values.offeringName })
+                        let date = !self.arrayOfOffering.contains(where: {$0.offeringDate == values.offeringDate })
+                        if  name && date {
+                            self.arrayOfOffering.insert(values, at: 1)
+                        } else {
+                            return
                         }
                     }
-                    
-                    do {
-                        let data = try JSONEncoder().encode(self.arrayOfOffering)
-                        UserDefaults.standard.set(data, forKey: "IPOs")
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                    
                 }
-            })
+                self.save()
+            }
+        })
+        
+        firebaseReference.child("removeOffer").observe(.value) { (snap: DataSnapshot) in
+            if snap.value as? String != "" {
+                self.arrayOfOffering.removeFirst()
+                self.save()
+            }
         }
+    }
+    
+    func save() {
+        do {
+            let data = try JSONEncoder().encode(self.arrayOfOffering)
+            UserDefaults.standard.set(data, forKey: "IPOs")
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     private func calaulateDate() {
         self.slideLabel.textColor = .white
@@ -145,6 +152,9 @@ class IPOsTableViewController: UIViewController {
 extension IPOsTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if arrayOfOffering.isEmpty {
+            return 1
+        }
         return arrayOfOffering.count
     }
     
