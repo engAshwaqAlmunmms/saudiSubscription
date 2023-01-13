@@ -178,9 +178,9 @@
 		EDB2E7AC285A53B70021E884 /* saudiSubscription */ = {
 			isa = PBXGroup;
 			children = (
-				ED4BBD422961F8CC00E02A34 /* Model */,
 				ED68E6A628CF87D5008A776F /* Task.md */,
 				ED54011928C7CE2800ED000D /* supportingFiles */,
+				ED4BBD422961F8CC00E02A34 /* Model */,
 				ED54011828C7CDB300ED000D /* ViewController */,
 				ED3990C028667A4D00D6592B /* GoogleService-Info.plist */,
 				EDB2E7BB285A53B80021E884 /* Info.plist */,

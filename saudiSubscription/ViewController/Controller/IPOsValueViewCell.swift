@@ -12,6 +12,7 @@ class IPOsValueViewCell: UITableViewCell {
     @IBOutlet public weak var offerEndDate: UILabel!
     @IBOutlet public weak var offerName: UILabel!
     
+    @IBOutlet weak var contentCell: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -103,12 +103,12 @@ class IPOsTableViewController: UIViewController {
                         let date = !self.arrayOfOffering.contains(where: {$0.offeringDate == values.offeringDate })
                         if  name && date {
                             self.arrayOfOffering.insert(values, at: 0)
+                            self.save()
                         } else {
                             return
                         }
                     }
                 }
-                self.save()
             }
         })
         
@@ -144,56 +144,34 @@ class IPOsTableViewController: UIViewController {
 }
 
 extension IPOsTableViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return arrayOfOffering.count
-    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if arrayOfOffering.isEmpty {
             return 0
         }
         return arrayOfOffering.count
     }
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//            cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-//            cell.layer.cornerRadius = 10
-//        } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-//            cell.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-//            cell.layer.cornerRadius = 10
-//        }
-//    }
-    
+        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        if indexPath.row == 0 {
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "IPOTitle", for: indexPath) as? IPOsTitleTableViewCell
 //            return cell ?? UITableViewCell()
 //        }
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "IPOValue", for: indexPath) as? IPOsValueViewCell else { return UITableViewCell() }
-        cell.layer.maskedCorners = [.layerMinXMinYCorner,
+        cell.contentCell.layer.maskedCorners = [.layerMinXMinYCorner,
                                      .layerMaxXMinYCorner,
                                      .layerMaxXMaxYCorner,
                                      .layerMinXMaxYCorner]
+        cell.backgroundColor = .clear
         cell.layer.cornerRadius = 10
         cell.offerName.text = arrayOfOffering[indexPath.row].offeringName
         cell.offerEndDate.text = arrayOfOffering[indexPath.row].offeringDate
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 30
+        return 50
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = UIView()
-        header.isUserInteractionEnabled = false
-        header.backgroundColor = .clear
-        return header
-    }
 }
