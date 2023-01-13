@@ -37,7 +37,6 @@ class IPOsTableViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
         load()
-        titleVC.flash()
         getValueToOfferingInformationView()
     }
     
@@ -49,10 +48,6 @@ class IPOsTableViewController: UIViewController {
     
     private func setUpView() {
         self.motherView.setGradientBackgroundForCard()
-        cardView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8629946677)
         let nibFirstCell = UINib(nibName: "IPOsValueViewCell", bundle: nil)
         tableView.register(nibFirstCell, forCellReuseIdentifier: "IPOValue")
         let nibSecondCell = UINib(nibName: "IPOsTitleTableViewCell", bundle: nil)
@@ -107,7 +102,7 @@ class IPOsTableViewController: UIViewController {
                         let name = !self.arrayOfOffering.contains(where: {$0.offeringName == values.offeringName })
                         let date = !self.arrayOfOffering.contains(where: {$0.offeringDate == values.offeringDate })
                         if  name && date {
-                            self.arrayOfOffering.insert(values, at: 1)
+                            self.arrayOfOffering.insert(values, at: 0)
                         } else {
                             return
                         }
@@ -117,12 +112,12 @@ class IPOsTableViewController: UIViewController {
             }
         })
         
-        firebaseReference.child("removeOffer").observe(.value) { (snap: DataSnapshot) in
-            if snap.value as? String != "" {
-                self.arrayOfOffering.removeFirst()
-                self.save()
-            }
-        }
+//        firebaseReference.child("removeOffer").observe(.value) { (snap: DataSnapshot) in
+//            if snap.value as? String != "" {
+//                self.arrayOfOffering.removeFirst()
+//                self.save()
+//            }
+//        }
     }
     
     func save() {
@@ -135,7 +130,6 @@ class IPOsTableViewController: UIViewController {
     }
     
     private func calaulateDate() {
-        self.slideLabel.textColor = .white
         guard closeDateOffering?.isEmpty == false else {return
             self.slideLabel.text = String("لا يوجد اكتتابات الأن")
         }
@@ -151,32 +145,55 @@ class IPOsTableViewController: UIViewController {
 
 extension IPOsTableViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return arrayOfOffering.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if arrayOfOffering.isEmpty {
-            return 1
+            return 0
         }
         return arrayOfOffering.count
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            tableView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-            tableView.layer.cornerRadius = 10
-        } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-            tableView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-            tableView.layer.cornerRadius = 10
-        }
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row == 0 {
+//            cell.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+//            cell.layer.cornerRadius = 10
+//        } else if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+//            cell.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+//            cell.layer.cornerRadius = 10
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "IPOTitle", for: indexPath) as? IPOsTitleTableViewCell
-            return cell ?? UITableViewCell()
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IPOValue", for: indexPath) as? IPOsValueViewCell
-        cell?.offerName.text = arrayOfOffering[indexPath.row].offeringName
-        cell?.offerEndDate.text = arrayOfOffering[indexPath.row].offeringDate
-        return cell ?? UITableViewCell()
+//        if indexPath.row == 0 {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "IPOTitle", for: indexPath) as? IPOsTitleTableViewCell
+//            return cell ?? UITableViewCell()
+//        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "IPOValue", for: indexPath) as? IPOsValueViewCell else { return UITableViewCell() }
+        cell.layer.maskedCorners = [.layerMinXMinYCorner,
+                                     .layerMaxXMinYCorner,
+                                     .layerMaxXMaxYCorner,
+                                     .layerMinXMaxYCorner]
+        cell.layer.cornerRadius = 10
+        cell.offerName.text = arrayOfOffering[indexPath.row].offeringName
+        cell.offerEndDate.text = arrayOfOffering[indexPath.row].offeringDate
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 30
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView()
+        header.isUserInteractionEnabled = false
+        header.backgroundColor = .clear
+        return header
     }
 }
