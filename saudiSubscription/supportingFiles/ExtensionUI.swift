@@ -11,14 +11,11 @@ import UIKit
 extension UIView {
     public func setGradientBackgroundForCard() {
         let gradientLayer = CAGradientLayer()
-        let middleColor = #colorLiteral(red: 0.5960784314, green: 0.6862745098, blue: 0.737254902, alpha: 1).cgColor
-        let buttomColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1).cgColor
-        gradientLayer.colors = [buttomColor, middleColor]
-        gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
-        gradientLayer.frame = self.frame
-        gradientLayer.frame.size = self.frame.size
-        self.layer.insertSublayer(gradientLayer, at:0)
+        let middleColor = #colorLiteral(red: 0.8274509804, green: 0.8274509804, blue: 0.8274509804, alpha: 1).cgColor
+        let buttomColor = #colorLiteral(red: 0.1764705882, green: 0.2039215686, blue: 0.2117647059, alpha: 1).cgColor
+        gradientLayer.frame = self.bounds
+        gradientLayer.colors = [middleColor, buttomColor]
+        self.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 
