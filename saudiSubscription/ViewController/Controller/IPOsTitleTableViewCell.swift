@@ -18,7 +18,7 @@ class IPOsTitleTableViewCell: UITableViewCell {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8524881325)
         offerEndDate.textAlignment = .center
         offerEndDate.textColor = .black
-        offerEndDate.text = "أنتهئ الأكتتاب منذ تاريخ"
+        offerEndDate.text = "أنتهى الأكتتاب منذ تاريخ"
         offerName.textAlignment = .center
         offerName.textColor = .black
         offerName.text = "أسم الأكتتاب"
