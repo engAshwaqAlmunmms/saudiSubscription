@@ -26,6 +26,7 @@ class IPOsTableViewController: UIViewController {
     var firebaseReference = Database.database().reference()
     private var closeDateOffering:String?
     private  var dictionaryOfOffering = [String:String]()
+    
     private var arrayOfOffering = [SaudiOffering]() {
         willSet{
             tableView.isHidden = false
@@ -47,18 +48,22 @@ class IPOsTableViewController: UIViewController {
     }
     
     private func setUpView() {
+        
         self.motherView.setGradientBackgroundForCard()
         let nibFirstCell = UINib(nibName: "IPOsValueViewCell", bundle: nil)
         tableView.register(nibFirstCell, forCellReuseIdentifier: "IPOValue")
         let nibSecondCell = UINib(nibName: "IPOsTitleTableViewCell", bundle: nil)
         tableView.register(nibSecondCell, forCellReuseIdentifier: "IPOTitle")
+        
         if arrayOfOffering.count == 0 {
             tableView.isHidden = true
         }
+        
         slideInFromLeft()
     }
     
     private func slideInFromLeft() {
+        
         UIView.animate(withDuration: 9.0, delay: 0, options: ([.curveLinear, .repeat]), animations: {() -> Void in
             self.slideLabel.center = CGPoint(x: 0 - self.slideLabel.bounds.size.width/2 , y: self.slideLabel.center.y)
         })
@@ -118,6 +123,7 @@ class IPOsTableViewController: UIViewController {
 //                self.save()
 //            }
 //        }
+        
     }
     
     func save() {
@@ -153,20 +159,27 @@ extension IPOsTableViewController: UITableViewDataSource, UITableViewDelegate {
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.row == 0 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "IPOTitle", for: indexPath) as? IPOsTitleTableViewCell
-//            return cell ?? UITableViewCell()
-//        }
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IPOTitle", for: indexPath) as? IPOsTitleTableViewCell
+            cell?.layer.maskedCorners = [.layerMinXMinYCorner,
+                                         .layerMaxXMinYCorner,
+                                         .layerMaxXMaxYCorner,
+                                         .layerMinXMaxYCorner]
+            cell?.layer.cornerRadius = 10
+            cell?.backgroundColor = .gray
+            return cell ?? UITableViewCell()
+        }
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "IPOValue", for: indexPath) as? IPOsValueViewCell else { return UITableViewCell() }
         cell.contentCell.layer.maskedCorners = [.layerMinXMinYCorner,
                                      .layerMaxXMinYCorner,
                                      .layerMaxXMaxYCorner,
                                      .layerMinXMaxYCorner]
-        cell.backgroundColor = .clear
-        cell.layer.cornerRadius = 10
+        cell.contentCell.layer.cornerRadius = 10
         cell.offerName.text = arrayOfOffering[indexPath.row].offeringName
         cell.offerEndDate.text = arrayOfOffering[indexPath.row].offeringDate
+        cell.backgroundColor = .clear
         return cell
     }
     

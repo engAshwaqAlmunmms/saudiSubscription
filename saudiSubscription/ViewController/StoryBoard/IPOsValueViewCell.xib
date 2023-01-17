@@ -44,6 +44,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="ULx-jj-y9i" secondAttribute="bottom" constant="5" id="RUN-GX-R03"/>
                     <constraint firstItem="ULx-jj-y9i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="RkU-Yj-a8G"/>
@@ -52,6 +53,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="contentCell" destination="ULx-jj-y9i" id="hW9-NO-Ubp"/>
                 <outlet property="offerEndDate" destination="Dx0-6K-Oxi" id="P5t-jW-7xP"/>

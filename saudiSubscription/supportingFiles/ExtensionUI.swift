@@ -38,11 +38,13 @@ extension UILabel {
         // create CAGradientLayer that will act as mask clear = not shown, opaque = rendered
         // Adjust gradient to increase width and angle of highlight
         let gradientLayer = CAGradientLayer()
+        
         gradientLayer.colors = [UIColor.clear.cgColor,
                                 UIColor.clear.cgColor,
                                 UIColor.black.cgColor,
                                 UIColor.clear.cgColor,
                                 UIColor.clear.cgColor]
+        
         gradientLayer.locations = [0.0, 0.35, 0.50, 0.65, 0.0]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
