@@ -36,8 +36,8 @@ class IPOsTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpView()
         load()
+        setUpView()
         getValueToOfferingInformationView()
     }
     
@@ -93,6 +93,7 @@ class IPOsTableViewController: UIViewController {
             self.calaulateDate()
         }
         
+        ///data table view
         firebaseReference.child("OLD_IPOs").observe(.value, with: { [self] snapshot in
             if let eachDict = snapshot.value as? NSDictionary {
                 let name = eachDict["OFFERING_BANKS"] as? String
@@ -101,6 +102,7 @@ class IPOsTableViewController: UIViewController {
                 
                 self.dictionaryOfOffering.updateValue(newSubscription.offeringDate ?? "", forKey: newSubscription.offeringName ?? "")
                 for (key, value) in dictionaryOfOffering {
+                    
                     var emptyArray = [SaudiOffering]()
                     emptyArray.append(SaudiOffering(offeringName: key, offeringDate: value))
                     for values in emptyArray {
@@ -167,7 +169,6 @@ extension IPOsTableViewController: UITableViewDataSource, UITableViewDelegate {
                                          .layerMaxXMaxYCorner,
                                          .layerMinXMaxYCorner]
             cell?.layer.cornerRadius = 10
-            cell?.backgroundColor = .gray
             return cell ?? UITableViewCell()
         }
         
