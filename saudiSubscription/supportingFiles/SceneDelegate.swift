@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  saudiSubscription
+//  saudiIPOs
 //
 //  Created by Ashwaq Alghamdi on 15.06.2022.
 //
@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidBecomeActive(_ scene: UIScene) {
         Thread.sleep(forTimeInterval: 3)
-        self.window?.rootViewController = UIStoryboard(name: "SubscriptionTableViewController", bundle: nil).instantiateViewController(withIdentifier: "SubscriptionTableViewController")
+        self.window?.rootViewController = UIStoryboard(name: "IPOsTableViewController", bundle: nil).instantiateViewController(withIdentifier: "IPOsTableViewController")
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
