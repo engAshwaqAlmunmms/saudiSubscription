@@ -3,14 +3,14 @@
 <img width="428" alt="Screenshot 2024-01-06 at 3 15 36 AM" src="https://github.com/engAshwaqAlmunmms/saudiSubscription/assets/88581485/34ca73e2-dfdb-4d1c-8439-689a4f7774e5">
 
 
-An app for Saudi IPOs to publish upcoming offerings, display remaining time, and provide a table for previous IPOs.
+### An app for Saudi IPOs to publish upcoming offerings, display remaining time, and provide a table for previous IPOs.
 
 
-I'm using the Swift language and UIKit framework for development,
+### I'm using the Swift language and UIKit framework for development,
 
-along with Firebase to send data for fields.
+### along with Firebase to send data for fields.
 
-Additionally, I've some extensions for animations and data formats.
+### Additionally, I've some extensions for animations and data formats.
 
 Next features include:
 •⁠  ⁠Sending notifications
